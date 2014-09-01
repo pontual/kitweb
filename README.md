@@ -13,7 +13,8 @@ null)
 SPECS
 -----
 
-A collection of pages 
+A collection of pages that read/write MySQL data and generates (overwrites)
+static pages
 
 Protect folder with .htaccess, using a simple password
 
@@ -34,15 +35,13 @@ product boxes have conditional tag that displays price if visitor is logged in
 
 database structure
 
-Priorities are integers, such as 100, 200, 300, then might use 110, 120, 121
-
 TABLE categoria
-id, nome, prioridade
+id, nome, ordem
 
 used by itself to generate sidebar.
 
 TABLE produto
-id, codigo, descricao, dimensoes, preco, prioridade
+id, codigo, descricao, dimensoes, preco, ordem
 
 preco default is 0
 
@@ -69,8 +68,8 @@ access with index.php?action=pagina&nome=NOME
 ADMIN PAGES
 -----------
 ability to drag-and-drop to assign display order, click button to auto-sort
-priority is a better term than order, because multiple items can have the same
-priority. Sort by priority, then by codigo
+to add a new product, a selection must be made and new item appears below the
+selection
 
 individual page to modify categories
 
