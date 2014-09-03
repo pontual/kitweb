@@ -1,0 +1,122 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.4
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 03, 2014 at 08:20 PM
+-- Server version: 5.6.15-log
+-- PHP Version: 5.5.8
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `pontualimportb1`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categoria`
+--
+
+DROP TABLE `categoria`;
+
+CREATE TABLE IF NOT EXISTS `categoria` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `lista` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `nome` (`nome`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `categoria`
+--
+
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Cantis', '140395\r\n141018\r\n141018A\r\n141018B\r\n141018G\r\n141018V\r\n141019\r\n141019A\r\n141019B\r\n141019G\r\n141019V\r\n141266\r\n141306\r\n141307\r\n141716\r\n141719\r\n141742\r\n141742A\r\n141742B\r\n141742G\r\n141742L\r\n141742V\r\n141742W\r\n141742Y\r\n141825P\r\n143027\r\n143027A\r\n143027V\r\n143040\r\n143143A\r\n143143G\r\n143143P\r\n143143V\r\n143147A\r\n143147G\r\n143147P\r\n143147V\r\n143176A\r\n143176B\r\n143176C\r\n143176G\r\n143176GG\r\n143176L\r\n143176P\r\n143176R\r\n143176V\r\n143176Y\r\n143186A\r\n143186P\r\n143186V\r\n143187A\r\n143187S\r\n143187V\r\n143192A\r\n143192P\r\n143192V\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Porta Cartões', '140153B\r\n143162\r\n143163M\r\n143163P\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Balanças', '141231\r\n141232\r\n143113\r\n143126P\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Cantis para Whisky', '141306\r\n141307\r\n141716\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Kits Costura', '141767C\r\n141767P\r\n141859\r\n141861\r\n143007\r\n143008\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Pinças', '143206\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Blocos para Anotação', '138499A\r\n138499P\r\n141244A\r\n141244P\r\n141854A\r\n141854P\r\n143077\r\n143078\r\n143108\r\n143132A\r\n143132C\r\n143132P\r\n143132V\r\n143159A\r\n143159B\r\n143159C\r\n143159L\r\n143159P\r\n143159V\r\n143160\r\n143161\r\n143203A\r\n143203B\r\n143203C\r\n143203V\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Calculadoras', '140401\r\n140402\r\n140918\r\n141253\r\n143142P\r\n143173\r\n143174\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Rádios', '140890\r\n141177\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Chaveiros', '137350A\r\n137350B\r\n137350K\r\n137350L\r\n137350P\r\n137350R\r\n139482H\r\n139482L\r\n139482M\r\n139482R\r\n140070\r\n140303\r\n140304\r\n140304A\r\n140304B\r\n140873A\r\n140873P\r\n140873S\r\n140873V\r\n141312\r\n141705\r\n141706\r\n141709\r\n141780B\r\n141780C\r\n141780D\r\n141780R\r\n141834\r\n141837\r\n141837A\r\n141837S\r\n141837V\r\n141838\r\n141838A\r\n141838S\r\n141838V\r\n141856\r\n141876C\r\n141876P\r\n143020A\r\n143020P\r\n143020V\r\n143021A\r\n143021P\r\n143021V\r\n143024\r\n143025\r\n143030\r\n143069B\r\n143069R\r\n143070\r\n143098\r\n143105\r\n143121\r\n143136\r\n143139A\r\n143139P\r\n143139S\r\n143140A\r\n143140P\r\n143140S\r\n143140V\r\n143148\r\n143149\r\n143151V\r\n143158B\r\n143158R\r\n143164P\r\n143170A\r\n143170G\r\n143170L\r\n143170P\r\n143170V\r\n143171A\r\n143171L\r\n143171V\r\n143191B\r\n143191K\r\n143191R\r\n143207A\r\n143207P\r\n143207V\r\n143210\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Kits Queijo', '141275M\r\n141276A\r\n141733A\r\n141887A\r\n143002A\r\n143039A\r\n143144\r\n143145\r\n143178\r\n143185\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Relógios', '139735\r\n140231\r\n140232\r\n140888\r\n140890\r\n140895\r\n140900\r\n140919\r\n140922\r\n140923\r\n140924\r\n140966\r\n141176\r\n141222\r\n141303\r\n141316\r\n141823\r\n143005\r\n143045\r\n143102\r\n143137\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Coqueteleiras', '140313\r\n140314\r\n140406\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Jogos', '141248\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Necessaires', '143109\r\n143110C\r\n143110R\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Lupas', '140926\r\n140927\r\n143016\r\n143046\r\n143049\r\n143076\r\n143079\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Kits Vinho', '140135\r\n141730\r\n141739\r\n141816\r\n141891P\r\n141892P\r\n143059\r\n143060\r\n143062\r\n143083\r\n143084\r\n143099\r\n143099A\r\n143099V\r\n143106A\r\n143172\r\n143180\r\n143190\r\n143211P\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Kits Escritório', '140963A\r\n140963B\r\n140964\r\n140964A\r\n140964B\r\n141810\r\n141810A\r\n141810B\r\n143028\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Canivetes', '139454\r\n139454A\r\n140068\r\n140070\r\n140078\r\n140288\r\n140884\r\n141229\r\n141771\r\n141774\r\n141836\r\n141840\r\n141867\r\n143013\r\n143064\r\n143123A\r\n143123P\r\n143193\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Binóculos', '143153\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Kits Churrasco', '141200\r\n141734\r\n141868\r\n141868C\r\n141869\r\n141889\r\n141890P\r\n143004C\r\n143004P\r\n143035\r\n143035P\r\n143036\r\n143037\r\n143107C\r\n143107G\r\n143107P\r\n143133\r\n143134\r\n143135\r\n143183\r\n143184\r\n143199\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Canecas', '140902A\r\n140902G\r\n140902T\r\n140902V\r\n140975A\r\n140975E\r\n140975G\r\n140975L\r\n140975T\r\n140975V\r\n141295\r\n141813\r\n141821A\r\n141821T\r\n141821V\r\n141883B\r\n141883P\r\n141883V\r\n141884A\r\n141884G\r\n141884T\r\n141884V\r\n143038\r\n143091A\r\n143091C\r\n143091T\r\n143091V\r\n143094A\r\n143094T\r\n143094V\r\n143116T\r\n143204\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Porta Canetas', '140231\r\n140232\r\n140922\r\n140923\r\n141823\r\n143137\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Mouse Pads', '140401\r\n140402\r\n141796P\r\n143142P\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Kits Cozinha', '140901\r\n140970\r\n140971\r\n141267\r\n141824\r\n141899\r\n141900\r\n143026\r\n143064\r\n143092\r\n143093A\r\n143093G\r\n143129\r\n143146\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Ferramentas', '139454\r\n139454A\r\n140068\r\n140070\r\n140078\r\n140288\r\n140310\r\n140884\r\n141229\r\n141235\r\n141268\r\n141283\r\n141284\r\n141764\r\n141765\r\n141771\r\n141774\r\n141836\r\n141840\r\n141867\r\n143013\r\n143029\r\n143030\r\n143058\r\n143064\r\n143085A\r\n143085P\r\n143085V\r\n143122\r\n143123A\r\n143123P\r\n143124\r\n143130A\r\n143130C\r\n143130V\r\n143150\r\n143151A\r\n143151P\r\n143151V\r\n143152\r\n143156\r\n143157\r\n143182A\r\n143182P\r\n143182V\r\n143193\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Alicates', '140288\r\n140310\r\n140884\r\n141771\r\n141774\r\n143122\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Porta Fotos', '139735\r\n140923\r\n141316\r\n141878\r\n141893\r\n143137\r\n236141\r\n236145\r\n236154\r\n236155\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Chaveiros N. Sra. Aparecida', '143200A\r\n143201A\r\n143208A\r\n143209A\r\n143213A\r\n139547A\r\n140396\r\n141025\r\n141713\r\n141780\r\n141797\r\n141832\r\n143019\r\n143165A\r\n143165I\r\n143179\r\n143181\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Porta Bolsas', '143086\r\n143086P\r\n143087\r\n143088\r\n143104\r\n143104P\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Kits Manicure', '139388\r\n140117\r\n140117R\r\n140117S\r\n140117V\r\n140121\r\n140125A\r\n140125R\r\n140125V\r\n140879\r\n141772\r\n141773B\r\n141773P\r\n141773R\r\n141773V\r\n141776\r\n141851\r\n141851S\r\n141851V\r\n143014R\r\n143061P\r\n143128\r\n143155\r\n143194\r\n143195\r\n143196\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Espelhos', '137263\r\n137535\r\n140045\r\n140047\r\n140086\r\n140087\r\n140088\r\n140241\r\n140274\r\n140275\r\n140276\r\n140943\r\n140944\r\n141193\r\n141237\r\n141263\r\n141264\r\n141708B\r\n141861\r\n143127\r\n143131\r\n143188\r\n143189\r\n143198\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Porta perfumes', '141808\r\n141809\r\n143197\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Porta Batons', '143212\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Porta Copos', '143042\r\n143117\r\n143118\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Squeezes', '140395\r\n141018\r\n141018A\r\n141018B\r\n141018G\r\n141018V\r\n141019\r\n141019A\r\n141019B\r\n141019G\r\n141019V\r\n141266\r\n141306\r\n141307\r\n141716\r\n141719\r\n141742\r\n141742A\r\n141742B\r\n141742G\r\n141742L\r\n141742V\r\n141742W\r\n141742Y\r\n141825P\r\n143027\r\n143027A\r\n143027V\r\n143040\r\n143143A\r\n143143G\r\n143143P\r\n143143V\r\n143147A\r\n143147G\r\n143147P\r\n143147V\r\n143176A\r\n143176B\r\n143176C\r\n143176G\r\n143176GG\r\n143176L\r\n143176P\r\n143176R\r\n143176V\r\n143176Y\r\n143186A\r\n143186P\r\n143186V\r\n143187A\r\n143187S\r\n143187V\r\n143192A\r\n143192P\r\n143192V\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Pincéis para Maquiagem', '138319P\r\n138319T\r\n139385P\r\n139385T\r\n141309P\r\n141309T\r\n141873D\r\n141830\r\n');
+INSERT INTO `categoria` (`nome`, `lista`) VALUES
+('Lanternas', '140888\r\n141001\r\n141173\r\n141283\r\n141284\r\n141778\r\n141837\r\n141837A\r\n141837S\r\n141837V\r\n141838\r\n141838A\r\n141838S\r\n141838V\r\n141856\r\n141864\r\n141864A\r\n141864C\r\n141864V\r\n141872\r\n143020A\r\n143020P\r\n143020V\r\n143021A\r\n143021P\r\n143021V\r\n143030\r\n143058\r\n143066\r\n143067\r\n143072\r\n143085A\r\n143085P\r\n143085V\r\n143130A\r\n143130C\r\n143130V\r\n143138A\r\n143138P\r\n143138S\r\n143138V\r\n143139A\r\n143139P\r\n143139S\r\n143139V\r\n143140A\r\n143140P\r\n143140S\r\n143140V\r\n143150\r\n143152\r\n143175\r\n143205A\r\n143205B\r\n143205C\r\n143207A\r\n143207P\r\n143207V\r\n');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

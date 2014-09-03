@@ -1,0 +1,43 @@
+Use a constants PHP file for Banner name, phone, address (multi-line and single
+line, Copyright,razao social
+
+Generate two headers, standard and printable
+
+Two tables now, so that items can be re-sorted manually
+
+Split list with $theList = preg_split('/\r\n|\r|\n/', $theStr);
+
+The index.php inside a .htaccess protected folder has two links
+
+describe steps needed, such as uploading photos separately, and a HTTPS link
+to update phpMyAdmin
+one link runs tests
+another link overwrites pages
+
+X Debug page generates only a "Enfeites" page, to test UTF encoding and overall
+X look
+
+All pages use the same sidebar and must be recreated every time something
+changes
+
+make PHP templates and include them in the Page Creator
+
+Directory structure
+
+index.html
+mapa.html
+mapa_impr.html
+pr_CATEGORIA.html
+pr_CATEGORIA_impr.html
+
+Read database once and process files with given array
+
+create functions that 'clean up' codigos and dimensoes into this format:
+uppercase letters for codigo
+dimensoes in 'a,d x b,d x c,d' format, cm is added automatically.
+explode with 'x' delimiter, strip elements and implode with ' x '
+explode categorias_str and add (if not exists) to global categorias
+
+Add/remove "Enfeites" with elephant photo to test MySQL add/remove
+
+check if file paths are relative

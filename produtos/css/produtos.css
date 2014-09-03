@@ -1,0 +1,59 @@
+.navbar .dropdown-menu {
+    margin-top: 0px;
+    z-index: 10;
+}
+
+/*
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+}
+*/
+
+.navbar-default .navbar-nav > li > a:hover {
+    background-color: #1682de;
+    color: #ffffff;
+}
+
+#links {
+    width: 100%;
+    padding: 0;
+}
+
+#gallery_container {
+    width: 100%;
+    padding: 0;
+}
+
+ul.products li {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin-top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: top;
+    padding: 0px 0px 10px 0px;
+    border: 2px solid #cccccc;
+    width: 200px;
+}
+
+ul.products li a {
+    color: #113211;
+    text-decoration: none;
+}
+
+.dropdown-menu {
+    max-height: 550px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.category_name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #C8102E;
+}
+
+.box_codigo {
+    font-size: 16px;
+}

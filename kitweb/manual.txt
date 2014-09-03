@@ -1,0 +1,3 @@
+when adding a Categoria, leave id blank (auto-generated)
+
+in PMA, click on Nome (or any other column name) to sort
