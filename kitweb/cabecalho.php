@@ -44,6 +44,7 @@ print <<<END
 	  </div>
 	</div>
     <div class="site_body_container">
+
 END;
 
 ?>
