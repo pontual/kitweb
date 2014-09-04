@@ -1,0 +1,4 @@
+// Things to do
+
+run validators (for example, check if foto exists) before writing files
+
