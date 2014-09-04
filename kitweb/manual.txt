@@ -1,3 +1,10 @@
 when adding a Categoria, leave id blank (auto-generated)
 
 in PMA, click on Nome (or any other column name) to sort
+
+Foto original deve ter dimensões de 640x480, 800x600, 1280x960 (proporção 4:3)
+
+Se for atualizar a foto original, apague a foto minimizada (mini_CODIGO) do
+servidor antes de rodar o script. O script gera a foto minimizada
+automaticamente quando ela não existe.
+

@@ -1,1 +1,5 @@
 kitweb/realdb.php
+*.jpg
+fotos/*.jpg
+fotos/*.JPG
+fotos/*.Jpg
