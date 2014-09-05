@@ -122,8 +122,8 @@ END;
         </div> <!-- site_gallery -->
 END;
     
-	gerar_pagina($nome_id, $conteudo);
-    gerar_pagina_impr($nome_id, $conteudo);
+	gerar_pagina("pr_" . $nome_id, $conteudo);
+    gerar_pagina_impr("pr_" . $nome_id, $conteudo);
 }
 
 // GERAR PAGINAS
