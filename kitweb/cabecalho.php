@@ -3,6 +3,8 @@ $ficha = $GLOBALS['ficha'];
 $nome_fantasia_upper = strtoupper($ficha['nome_fantasia']);
 $endereco_bloco = str_replace(" - ", "<br>", $ficha['endereco']);
 
+$TIMESTAMP = date('d/m/y H:i:s');
+
 print <<<END
 <!DOCTYPE html>
 <html>
@@ -24,26 +26,30 @@ print <<<END
 		</div>
       </a>
 	    <div class="site_banner">
-            <a href="index.html">
+          <a href="index.html">
             <span class="banner_company_name">
               $nome_fantasia_upper
             </span><br>
             <i>{$ficha['slogan']}</i><br>
+
+<br><br>
+            $TIMESTAMP<br><br>
+            
           </a>
           <span class="telefones">
             {$ficha['telefone']}<br>
           </span>
           <br>
-		</div>
+		</div> <!-- end site_banner -->
+        
 	  <div class="site_address">
         <a href="mapa.html">
           $endereco_bloco
           <br>
           <u><b>Como chegar</b></u>
         </a>
-	  </div>
-	</div>
-    <div class="site_body_container">
+	  </div> <!-- end site_address -->
+	</div> <!-- end site_header -->
 
 END;
 
