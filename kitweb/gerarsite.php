@@ -1,4 +1,7 @@
 <?php
+
+// use util/ptldb.php for production
+
 require('util/db.php');
 
 require_once('util/carregarficha.php');
