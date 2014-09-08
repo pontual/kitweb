@@ -4,7 +4,7 @@ function format_dimensoes($str) {
     $trimmed_dimensoes = array();
     $dimensoes = explode("x", $str);
     foreach ($dimensoes as $dimensao) {
-        $trimmed_dimensoes[] = trim($dimensao);
+        $trimmed_dimensoes[] = trim(str_replace(".", ",", $dimensao));
     }
     return implode(" x ", $trimmed_dimensoes);
 }

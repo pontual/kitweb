@@ -20,11 +20,11 @@ function get_id($nome) {
 	return preg_replace('/[^a-z]/', "", strtolower(strip_accents($nome)));
 }
 
-function gerar_barra($categorias) {
+function gerar_barra($prefixo, $categorias) {
 	$barra = "		<div class=\"site_sidebar\">\n		  <ul>\n";
 	foreach ($categorias as $nome => $categoria) {
 		$nome_id = get_id($nome);
-		$barra .= "			 <li><a href=\"pr_{$nome_id}.html\">$nome</a></li>\n";
+		$barra .= "			 <li><a href=\"{$prefixo}pr_{$nome_id}.html\">$nome</a></li>\n";
 	}
 	$barra .= "		   </ul>\n";
 	$barra .= <<<END
@@ -42,13 +42,13 @@ END;
 
 include "cabecalho_admin.php";
 
-function gerar_pagina($name, $conteudo) {
+function gerar_pagina($prefixo, $name, $conteudo, $categorias) {
 	print "Gerando página $name\n";
 	ob_start();
 	include 'cabecalho.php';
 
 	print '	 <div class="site_body_container">' . "\n";
-	print gerar_barra($GLOBALS['categorias']);
+	print gerar_barra($prefixo, $categorias);
 	print '<!--' . date('d/m/y H:i:s') . '-->';
 	print '	   <div class="site_content">' . "\n";
 
@@ -58,7 +58,7 @@ function gerar_pagina($name, $conteudo) {
 		$impr_link = <<<END
 		<br>
 		<div style="float:left; margin-left:10px; margin-right:10px;">
-			 <i><a href="{$name}_impr.html">Z Página para impressão</a></i>
+			 <i><a href="{$prefixo}{$name}_impr.html">Página para impressão</a></i>
         </div>
         <br>    
 END;
@@ -72,10 +72,10 @@ END;
 	print '	 </div> <!-- end site_body_container -->' . "\n";
 
 	include 'rodape.php';
-	file_put_contents("../ger2_" . $name . ".html" , ob_get_clean());
+	file_put_contents("../" . $prefixo . $name . ".html" , ob_get_clean());
 }
 
-function gerar_pagina_impr($name, $conteudo) {
+function gerar_pagina_impr($prefixo, $name, $conteudo) {
 	print "Gerando página para impressão $name\n";
 
 	ob_start();
@@ -89,12 +89,11 @@ function gerar_pagina_impr($name, $conteudo) {
 	print '	   </div> <!-- end site_content -->' . "\n";
 	
 	include 'rodape_impr.php';
-	file_put_contents("../ger2_" . $name . "_impr.html", ob_get_clean());	 
+	file_put_contents("../" . $prefixo . $name . "_impr.html", ob_get_clean());	 
 }
 
-function gerar_categoria($categoria) {
+function gerar_categoria($prefixo, $categoria, $categorias, $lista_produtos) {
 	$nome_id = get_id($categoria);
-	$lista_produtos = $GLOBALS['produtos'];
 
     $conteudo = <<<END
         <div class="site_gallery">
@@ -104,14 +103,20 @@ function gerar_categoria($categoria) {
               <ul class="products">
 END;
     
-	foreach ($GLOBALS['categorias'][$categoria] as $codigo) {
+	foreach ($categorias[$categoria] as $codigo) {
 		if (strlen($codigo) > 5) {		
 			$conteudo .= <<<END
                 <li>
-				<a class="product_group" href="fotos/$codigo.jpg"><img src="fotos/thumb_$codigo.jpg" alt="$codigo"><br>
+				<a class="product_group" href="fotos/$codigo.jpg" title="$codigo<br>{$lista_produtos[$codigo]->_descricao} ({$lista_produtos[$codigo]->_dimensoes} cm)">
+                <img src="fotos/thumb_$codigo.jpg" alt="$codigo"><br>
 				<span class="box_codigo">&nbsp;&nbsp;$codigo&nbsp;&nbsp;</span><br>
-                {$lista_produtos[$codigo]->_descricao}</a><br>
+                {$lista_produtos[$codigo]->_descricao}</a>
+
+                <!--
+                <br>
 				{$lista_produtos[$codigo]->_dimensoes} cm
+                -->
+                
      		    </li>
 END;
             
@@ -125,46 +130,24 @@ END;
         </div> <!-- site_gallery -->
 END;
     
-	gerar_pagina("pr_" . $nome_id, $conteudo);
-    gerar_pagina_impr("pr_" . $nome_id, $conteudo);
+	gerar_pagina($prefixo, "pr_" . $nome_id, $conteudo, $categorias);
+    gerar_pagina_impr($prefixo, "pr_" . $nome_id, $conteudo);
 }
 
 // GERAR PAGINAS
-function gerar_tudo() {
-	gerar_pagina("index", file_get_contents('static/index_conteudo.html'));
+function gerar_tudo($prefixo, $categorias, $produtos) {
+	gerar_pagina($prefixo, "index", file_get_contents('static/index_conteudo.html'), $categorias);
     
-	gerar_pagina("mapa", file_get_contents('static/mapa_conteudo.html'));
-	gerar_pagina_impr("mapa", file_get_contents('static/mapa_conteudo.html'));
-    
-	gerar_categoria('Alicates');
+	gerar_pagina($prefixo, "mapa", file_get_contents('static/mapa_conteudo.html'), $categorias);
+	gerar_pagina_impr($prefixo, "mapa", file_get_contents('static/mapa_conteudo.html'));
+
+    foreach ($categorias as $categoria => $lista) {
+    	gerar_categoria($prefixo, $categoria, $categorias, $produtos);
+    }
 }
 
-gerar_tudo();
-
-//	 gerar_mapa();
-//	 gerar_mapa_impr();
-//	 foreach ($categorias as $categoria => $lista) {
-//		gerar_categoria($categoria);
-//	 }
-
-// gerar_categoria("Alicates");
-
-/*
-  $c = <<<END
-		<div class="site_gallery">
-		<span class="category_name">Chaveiros N. Sra. Aparecida</span>
-		  <div class="container" id="gallery_container">
-			<div id="links">
-			  <ul class="products">
-END;
-
-foreach($categorias['X-Tudo'] as $codigo) {
-	$c .= <<<END
-		<li><a class="product_group" href="fotos/$codigo.jpg"><img src="fotos/thumb_$codigo.jpg">{$produtos[$codigo]->_descricao}<br><span class="box_codigo">$codigo</a></li>
-END;
-}
-
-gerar_pagina("../gerado.html", $c);
-*/
+$PREFIXO = "ger3_";
+echo "Usando prefixo $PREFIXO\n\n"; 
+gerar_tudo($PREFIXO, $categorias, $produtos);
 
 ?>

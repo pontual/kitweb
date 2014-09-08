@@ -57,5 +57,3 @@ if (!$errors) {
 <?php
 }
 ?>
-
-<a href="../gerado.html">Gerado</a>
