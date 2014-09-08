@@ -146,7 +146,13 @@ function gerar_tudo($prefixo, $categorias, $produtos) {
     }
 }
 
-$PREFIXO = "ger3_";
+if (isset($_GET['debug'])) {
+    $PREFIXO = "debug_";
+}
+else {
+    $PREFIXO = "";
+}
+
 echo "Usando prefixo $PREFIXO\n\n"; 
 gerar_tudo($PREFIXO, $categorias, $produtos);
 

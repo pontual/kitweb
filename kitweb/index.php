@@ -27,6 +27,8 @@ foreach ($produtos as $produto) {
     else {
         if (!file_exists("../fotos/thumb_$produto->_codigo.jpg")) {
             print "Criando miniatura para $produto->_codigo\n";
+            flush();
+            ob_flush();
             smart_resize_image("../fotos/$produto->_codigo.jpg",
                                null, 200, 150, true,
                                "../fotos/thumb_$produto->_codigo.jpg",
@@ -51,6 +53,8 @@ foreach ($categorias as $categoria => $lista) {
 <?php
 if (!$errors) {
 ?>
+
+<a href="gerarsite.php?debug=1">Clique aqui para criar paginas para verificação "debug_index.html"</a>
 
 <a href="gerarsite.php">Clique aqui para gerar site</a>
 

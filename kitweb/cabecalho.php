@@ -2,6 +2,7 @@
 $ficha = $GLOBALS['ficha'];
 $nome_fantasia_upper = strtoupper($ficha['nome_fantasia']);
 $endereco_bloco = str_replace(" - ", "<br>", $ficha['endereco']);
+$PREFIXO = $GLOBALS['PREFIXO'];
 
 $DATA_E_HORA = date('d/m/y H:i:s');
 
@@ -21,13 +22,13 @@ print <<<END
     <!-- Gerado pelo PTLKitWeb -->
 	<div class="site_header">
       <a name="top">&nbsp;</a>
-	  <a href="index.html">
+	  <a href="{$PREFIXO}index.html">
 		<div class="site_logo">
 		  <img src="img/logo_transp.png" style="vertical-align: top;" alt="Pontual">
 		</div>
       </a>
 	    <div class="site_banner">
-          <a href="index.html">
+          <a href="{$PREFIXO}index.html">
             <span class="banner_company_name">
               $nome_fantasia_upper
             </span><br>
@@ -40,7 +41,7 @@ print <<<END
 		</div> <!-- end site_banner -->
         
 	  <div class="site_address">
-        <a href="mapa.html">
+        <a href="{$PREFIXO}mapa.html">
           $endereco_bloco
           <br>
           <u><b>Como chegar</b></u>
