@@ -62,6 +62,9 @@ foreach ($categorias as $categoria => $lista) {
 if (!$errors) {
 ?>
 
+<a href="https://phpmyadmin.locaweb.com.br/" target="_blank">Acessar banco de dados</a>
+Server: 186.202.152.189
+
 <a href="gerarsite.php?debug=1">Clique aqui para criar paginas para verificação "debug_index.html"</a>
 
 <a href="gerarsite.php">Clique aqui para gerar site</a>
