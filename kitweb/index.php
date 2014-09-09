@@ -1,5 +1,5 @@
 <?php
-require('util/db.php');
+require('util/ptldb.php');
 
 require_once('util/carregarficha.php');
 require_once('util/carregarprodutos.php');
@@ -19,21 +19,29 @@ $errors = false;
 // imprimir informacoes
 include 'cabecalho_admin.php';
 
-foreach ($produtos as $produto) {
-    if (!file_exists("../fotos/$produto->_codigo.jpg")) {
-        print "Atenção: Foto para $produto->_codigo não encontrada\n";
-        $errors = true;
-    }
-    else {
-        if (!file_exists("../fotos/thumb_$produto->_codigo.jpg")) {
-            print "Criando miniatura para $produto->_codigo\n";
-            flush();
-            ob_flush();
-            smart_resize_image("../fotos/$produto->_codigo.jpg",
-                               null, 200, 150, true,
-                               "../fotos/thumb_$produto->_codigo.jpg",
-                               false, false, 100);
+
+foreach ($produtos as $produto) {    
+    if (!file_exists("../fotos/$produto->_codigo.JPG")) {
+        if (file_exists("../fotos/$produto->_codigo.jpg")) {
+            copy("../fotos/$produto->_codigo.jpg", "../fotos/$produto->_codigo.JPG");
         }
+        elseif (file_exists("../fotos/$produto->_codigo.Jpg")) {
+            copy("../fotos/$produto->_codigo.Jpg", "../fotos/$produto->_codigo.JPG");
+        }
+        else {
+            print "Atenção: Foto para $produto->_codigo não encontrada\n";
+            $errors = true;
+        }
+    }
+
+    if (file_exists("../fotos/$produto->_codigo.JPG") && !file_exists("../fotos/thumb_$produto->_codigo.JPG")) {
+        print "Criando miniatura para $produto->_codigo\n";
+        flush();
+        ob_flush();
+        smart_resize_image("../fotos/$produto->_codigo.JPG",
+                           null, 200, 150, true,
+                           "../fotos/thumb_$produto->_codigo.JPG",
+                           false, false, 100);
     }
 }
 

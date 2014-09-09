@@ -2,7 +2,7 @@
 
 // use util/ptldb.php for production
 
-require('util/db.php');
+require('util/ptldb.php');
 
 require_once('util/carregarficha.php');
 require_once('util/carregarprodutos.php');
@@ -107,8 +107,8 @@ END;
 		if (strlen($codigo) > 5) {		
 			$conteudo .= <<<END
                 <li>
-				<a class="product_group" href="fotos/$codigo.jpg" title="$codigo<br>{$lista_produtos[$codigo]->_descricao} ({$lista_produtos[$codigo]->_dimensoes} cm)">
-                <img src="fotos/thumb_$codigo.jpg" alt="$codigo"><br>
+				<a class="product_group" href="fotos/$codigo.JPG" title="$codigo<br>{$lista_produtos[$codigo]->_descricao} ({$lista_produtos[$codigo]->_dimensoes} cm)">
+                <img src="fotos/thumb_$codigo.JPG" alt="$codigo"><br>
 				<span class="box_codigo">&nbsp;&nbsp;$codigo&nbsp;&nbsp;</span><br>
                 {$lista_produtos[$codigo]->_descricao}</a>
 

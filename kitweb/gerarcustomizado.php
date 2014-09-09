@@ -1,5 +1,5 @@
 <?php
-require('util/db.php');
+require('util/ptldb.php');
 
 require_once('util/carregarficha.php');
 require_once('util/carregarprodutos.php');
@@ -21,7 +21,7 @@ END;
 
 foreach($categorias['X-Tudo'] as $codigo) {
     print <<<END
-<li><a class="product_group" href="fotos/$codigo.jpg" title="Chaveiro de metal - 143200A"><img src="fotos/thumb_$codigo.jpg"><br><span class="box_codigo">&nbsp;&nbsp;143200A&nbsp;&nbsp;</span><br>Chaveiro de metal</a></li>
+<li><a class="product_group" href="fotos/$codigo.JPG" title="Chaveiro de metal - 143200A"><img src="fotos/thumb_$codigo.JPG"><br><span class="box_codigo">&nbsp;&nbsp;143200A&nbsp;&nbsp;</span><br>Chaveiro de metal</a></li>
 END;
 }
 

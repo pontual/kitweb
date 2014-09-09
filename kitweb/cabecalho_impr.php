@@ -3,6 +3,7 @@ $ficha = $GLOBALS['ficha'];
 $nome_fantasia_upper = strtoupper($ficha['nome_fantasia']);
 $endereco_bloco = str_replace(" - ", "<br>", $ficha['endereco']);
 
+date_default_timezone_set("America/Sao_Paulo");
 $DATA_E_HORA = date('d/m/y H:i:s');
 
 print <<<END
