@@ -1,4 +1,8 @@
 // Things to do
 
-run validators (for example, check if foto exists) before writing files
+Add another level of indirection: index.php gives link to DB and instructions
+
+Next, verify fotos and produto entries. Display info found in ficha
+
+If everything is OK, generate pages to debug or live
 
