@@ -24,9 +24,11 @@ foreach ($produtos as $produto) {
     if (!file_exists("../fotos/$produto->_codigo.JPG")) {
         if (file_exists("../fotos/$produto->_codigo.jpg")) {
             copy("../fotos/$produto->_codigo.jpg", "../fotos/$produto->_codigo.JPG");
+            chmod("../fotos/$produto->_codigo.JPG", 0644);
         }
         elseif (file_exists("../fotos/$produto->_codigo.Jpg")) {
             copy("../fotos/$produto->_codigo.Jpg", "../fotos/$produto->_codigo.JPG");
+            chmod("../fotos/$produto->_codigo.JPG", 0644);
         }
         else {
             print "Atenção: Foto para $produto->_codigo não encontrada\n";
@@ -42,6 +44,7 @@ foreach ($produtos as $produto) {
                            null, 200, 150, true,
                            "../fotos/thumb_$produto->_codigo.JPG",
                            false, false, 100);
+        chmod("../fotos/thumb_$produto->_codigo.JPG", 0644);
     }
 }
 

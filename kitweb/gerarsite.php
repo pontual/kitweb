@@ -73,6 +73,7 @@ END;
 
 	include 'rodape.php';
 	file_put_contents("../" . $prefixo . $name . ".html" , ob_get_clean());
+    chmod("../" . $prefixo . $name . ".html", 0644);
 }
 
 function gerar_pagina_impr($prefixo, $name, $conteudo) {
@@ -89,7 +90,8 @@ function gerar_pagina_impr($prefixo, $name, $conteudo) {
 	print '	   </div> <!-- end site_content -->' . "\n";
 	
 	include 'rodape_impr.php';
-	file_put_contents("../" . $prefixo . $name . "_impr.html", ob_get_clean());	 
+	file_put_contents("../" . $prefixo . $name . "_impr.html", ob_get_clean());
+    chmod("../" . $prefixo . $name . "_impr.html", 0644);
 }
 
 function gerar_categoria($prefixo, $categoria, $categorias, $lista_produtos) {

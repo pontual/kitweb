@@ -9,7 +9,7 @@ function getficha($db) {
         return $ficha;
     }
     catch (PDOException $e) {
-        print $e->getMessage();
+        print($e->getMessage());
     }
 }
 
