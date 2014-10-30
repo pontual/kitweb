@@ -12,7 +12,7 @@ print <<<END
   <head>
     <!-- $DATA_E_HORA -->
 	<meta charset="utf-8">
-	<title>{$ficha['nome_fantasia']} - {$ficha['razao_social']}</title>
+	<title>{$ficha['nome_fantasia']} - {$ficha['razao_social']} - $title</title>
 	<link rel="stylesheet" href="produtos/css/produtos.css">
 	<link rel="stylesheet" href="css/main.css" type="text/css">
   	<link rel="stylesheet" href="css/colorbox.css" type="text/css">

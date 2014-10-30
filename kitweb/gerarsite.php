@@ -42,7 +42,7 @@ END;
 
 include "cabecalho_admin.php";
 
-function gerar_pagina($prefixo, $name, $conteudo, $categorias) {
+function gerar_pagina($prefixo, $name, $conteudo, $categorias, $title) {
 	print "Gerando página $name\n";
 	ob_start();
 	include 'cabecalho.php';
@@ -76,7 +76,7 @@ END;
     chmod("../" . $prefixo . $name . ".html", 0644);
 }
 
-function gerar_pagina_impr($prefixo, $name, $conteudo) {
+function gerar_pagina_impr($prefixo, $name, $conteudo, $title) {
 	print "Gerando página para impressão $name\n";
 
 	ob_start();
@@ -132,16 +132,16 @@ END;
         </div> <!-- site_gallery -->
 END;
     
-	gerar_pagina($prefixo, "pr_" . $nome_id, $conteudo, $categorias);
-    gerar_pagina_impr($prefixo, "pr_" . $nome_id, $conteudo);
+	gerar_pagina($prefixo, "pr_" . $nome_id, $conteudo, $categorias, $categoria);
+    gerar_pagina_impr($prefixo, "pr_" . $nome_id, $conteudo, $categoria);
 }
 
 // GERAR PAGINAS
 function gerar_tudo($prefixo, $categorias, $produtos) {
-	gerar_pagina($prefixo, "index", file_get_contents('static/index_conteudo.html'), $categorias);
+	gerar_pagina($prefixo, "index", file_get_contents('static/index_conteudo.html'), $categorias, "Home");
     
-	gerar_pagina($prefixo, "mapa", file_get_contents('static/mapa_conteudo.html'), $categorias);
-	gerar_pagina_impr($prefixo, "mapa", file_get_contents('static/mapa_conteudo.html'));
+	gerar_pagina($prefixo, "mapa", file_get_contents('static/mapa_conteudo.html'), $categorias, "Como Chegar");
+	gerar_pagina_impr($prefixo, "mapa", file_get_contents('static/mapa_conteudo.html'), "Como Chegar");
 
     foreach ($categorias as $categoria => $lista) {
     	gerar_categoria($prefixo, $categoria, $categorias, $produtos);

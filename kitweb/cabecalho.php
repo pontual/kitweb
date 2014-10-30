@@ -7,7 +7,7 @@ $PREFIXO = $GLOBALS['PREFIXO'];
 date_default_timezone_set("America/Sao_Paulo");
 $DATA_E_HORA = date('d/m/y H:i:s');
 
-$categoria_ucfirst = ucfirst($categoria)
+$categoria_ucfirst = ucfirst($title);
 
 print <<<END
 <!DOCTYPE html>
