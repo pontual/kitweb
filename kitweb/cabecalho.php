@@ -7,13 +7,15 @@ $PREFIXO = $GLOBALS['PREFIXO'];
 date_default_timezone_set("America/Sao_Paulo");
 $DATA_E_HORA = date('d/m/y H:i:s');
 
+$categoria_ucfirst = ucfirst($categoria)
+
 print <<<END
 <!DOCTYPE html>
 <html>
   <head>
     <!-- $DATA_E_HORA -->
     <meta charset="utf-8">
-	<title>{$ficha['nome_fantasia']} - {$ficha['razao_social']}</title>
+	<title>{$ficha['nome_fantasia']} - {$ficha['razao_social']} - $categoria_ucfirst</title>
 	<link rel="stylesheet" href="produtos/css/produtos.css">
 	<link rel="stylesheet" href="css/main.css" type="text/css">
 	<link rel="stylesheet" href="css/slick.css" type="text/css">
