@@ -104,9 +104,9 @@
 			  <table border="0" cellpadding="0">
 				<tr>
 				  <td><b>Digite o código: </b></td>
-				  <td><input ng-model="buscaCodigoTexto" /></td>
+				  <td><input ng-model="buscaCodigoTexto" ng-change="checkKonamiCode(buscaCodigoTexto)" /></td>
 				</tr>
-				<tr>
+				<tr ng-show="enteredKonamiCode">
 				  <td><b>Digite a descrição: </b></td>
 				  <td><input ng-model="buscaDescricaoTexto" /></td>
 				</tr>

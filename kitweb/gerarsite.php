@@ -152,6 +152,13 @@ foreach ($produtos as $codigo => $produto) {
 $conteudo .= <<<'END'
     ];
     
+    $scope.enteredKonamiCode = false;
+    $scope.checkKonamiCode = function(codigo) {
+        if (codigo === 'konami') {
+            $scope.enteredKonamiCode = true;
+        }
+    };
+    
     $scope.produtoCorresponde = function(codigoProduto, descricaoProduto, descricaoProdutoSemAcentos, buscaCodigoProduto, buscaDescricaoProduto) {
         buscaCodigoProduto = buscaCodigoProduto || "";
         buscaDescricaoProduto = buscaDescricaoProduto || "";

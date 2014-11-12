@@ -500,6 +500,14 @@ angular.module('BuscaProdutoApp', [])
 { codigo: '236155', caption: 'Porta foto plástico 13x18 cm', captionSemAcentos: 'Porta foto plastico 13x18 cm', dimensions: '(13 x 18 cm)' },
 { codigo: 'BJ9090', caption: 'Presilha p/ cabelo', captionSemAcentos: 'Presilha p/ cabelo', dimensions: '( cm)' },
     ];
+                                                          
+
+    $scope.enteredKonamiCode = false;
+    $scope.checkKonamiCode = function(codigo) {
+        if (codigo === 'konami') {
+            $scope.enteredKonamiCode = true;
+        }
+    };
     
     $scope.produtoCorresponde = function(codigoProduto, descricaoProduto, descricaoProdutoSemAcentos, buscaCodigoProduto, buscaDescricaoProduto) {
         buscaCodigoProduto = buscaCodigoProduto || "";
