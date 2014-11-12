@@ -21,7 +21,7 @@ function get_id($nome) {
 }
 
 function gerar_barra($prefixo, $categorias) {
-	$barra = "		<div class=\"site_sidebar\">\n		  <ul>\n";
+	$barra = "		<div class=\"site_sidebar\">\n		  <ul>\n <li><a href=\"busca.html\"><b><i>Busca por código</i></b></a></li>\n";
 	foreach ($categorias as $nome => $categoria) {
 		$nome_id = get_id($nome);
 		$barra .= "			 <li><a href=\"{$prefixo}pr_{$nome_id}.html\">$nome</a></li>\n";
@@ -136,6 +136,46 @@ END;
     gerar_pagina_impr($prefixo, "pr_" . $nome_id, $conteudo, $categoria);
 }
 
+function gerar_busca_js($produtos) {
+    ob_start();
+
+    $conteudo = <<<'END'
+angular.module('BuscaProdutoApp', [])
+  .controller('BuscaProdutoController', function($scope) {
+    $scope.produtos = [
+END;
+
+foreach ($produtos as $codigo => $produto) {
+    $conteudo .= "{ codigo: '$codigo', caption: '{$produtos[$codigo]->_descricao}', captionSemAcentos: '" . strip_accents($produtos[$codigo]->_descricao) . "', dimensions: '({$produtos[$codigo]->_dimensoes} cm)' },\n";
+}
+
+$conteudo .= <<<'END'
+    ];
+    
+    $scope.produtoCorresponde = function(codigoProduto, descricaoProduto, descricaoProdutoSemAcentos, buscaCodigoProduto, buscaDescricaoProduto) {
+        buscaCodigoProduto = buscaCodigoProduto || "";
+        buscaDescricaoProduto = buscaDescricaoProduto || "";
+        
+        produtoCorresponde = codigoProduto.indexOf(buscaCodigoProduto.toUpperCase()) > -1;
+        descricaoCorresponde = (descricaoProduto.toLowerCase().indexOf(buscaDescricaoProduto.toLowerCase()) > -1 || descricaoProdutoSemAcentos.toLowerCase().indexOf(buscaDescricaoProduto.toLowerCase()) > -1);
+
+      if (buscaCodigoProduto === '') {
+        produtoCorresponde = true;
+      }
+      if (buscaDescricaoProduto === '') {
+        descricaoCorresponde = true;
+      }
+
+        return produtoCorresponde && descricaoCorresponde;
+    };
+  });
+END;
+print $conteudo;
+
+    file_put_contents("../js/buscaprodutoapp.js", ob_get_clean());
+    chmod("../js/buscaprodutoapp.js", 0644);
+}
+
 // GERAR PAGINAS
 function gerar_tudo($prefixo, $categorias, $produtos) {
 	gerar_pagina($prefixo, "index", file_get_contents('static/index_conteudo.html'), $categorias, "Home");
@@ -143,9 +183,16 @@ function gerar_tudo($prefixo, $categorias, $produtos) {
 	gerar_pagina($prefixo, "mapa", file_get_contents('static/mapa_conteudo.html'), $categorias, "Como Chegar");
 	gerar_pagina_impr($prefixo, "mapa", file_get_contents('static/mapa_conteudo.html'), "Como Chegar");
 
+    gerar_pagina($prefixo, "busca", file_get_contents('static/busca_conteudo.html'), $categorias, "Busca por código");
+    gerar_pagina_impr($prefixo, "busca", file_get_contents('static/busca_conteudo.html'), "Busca por código");
+    
+
     foreach ($categorias as $categoria => $lista) {
     	gerar_categoria($prefixo, $categoria, $categorias, $produtos);
     }
+
+    // ATUALIZAR DADOS NO SCRIPT DA BUSCA
+    gerar_busca_js($produtos);
 }
 
 if (isset($_GET['debug'])) {

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 12/11/14 13:58:38 -->
+	<meta charset="utf-8">
+	<title>Pontual Import Brindes - Pontual Exportação e Importação Ltda. - Busca por código</title>
+	<link rel="stylesheet" href="produtos/css/produtos.css">
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+  	<link rel="stylesheet" href="css/colorbox.css" type="text/css">
+  </head>
+  <body>
+    <!-- Gerado pelo PTLKitWeb -->
+    <a href="index.html">Voltar</a></br>
+    <div class="printable_header">
+      <a href="index.html">
+      <b>PONTUAL IMPORT BRINDES</b><br>
+      R. Antônio de Andrade, 109 - Canindé - São Paulo, SP, CEP 03034-080<br>
+      (11) 3228-1113 / 3227-4026 / 3313-7704
+      </a>
+    </div>
+    <!--12/11/14 13:58:38-->	   <div class="site_content">
+		<script src="js/angular.min.js"></script>
+		<script src="js/buscaprodutoapp.js"></script>
+		<div ng-app="BuscaProdutoApp">
+		  <div ng-controller="BuscaProdutoController">
+			<div class="site_gallery">
+			  <span class="category_name">Busca</span>
+			  <br>
+			  <b>Digite o código: </b>
+			  <input ng-model="buscaCodigoTexto" />
+
+			  <div class="container" id="gallery_container">
+				<div id="links">
+				  <ul class="products">
+					<li ng-repeat="produto in produtos" ng-show="produtoCorresponde(produto.codigo, buscaCodigoTexto)">
+					  <a class="product_group" href="fotos/141248.JPG" title="{{produto.caption}}">
+						<img src="fotos/thumb_{{produto.codigo}}.JPG" alt="{{produto.codigo}}"><br>
+						<span class="box_codigo">&nbsp;&nbsp;{{produto.codigo}}&nbsp;&nbsp;</span><br>
+						{{produto.caption}}
+					  </a>
+					</li>
+				  </ul>
+				</div> <!-- links -->
+			  </div> <!-- gallery_container -->
+			</div> <!-- site_gallery -->
+		  </div> <!-- div ng-controller -->
+		</div> <!-- div ng-app -->
+	   </div> <!-- end site_content -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
+	<script type="text/javascript" src="js/setup_colorbox.js"></script>
+    </body>
+    </html>
+    
