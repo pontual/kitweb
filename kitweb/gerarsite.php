@@ -156,6 +156,7 @@ $conteudo .= <<<'END'
     $scope.checkKonamiCode = function(codigo) {
         if (codigo === 'konami') {
             $scope.enteredKonamiCode = true;
+            $scope.buscaCodigoTexto = '';
         }
     };
     
