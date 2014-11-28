@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 13/11/14 11:36:18 -->
+	<meta charset="utf-8">
+	<title>Pontual Import Brindes - Catálogo</title>
+	<link rel="stylesheet" href="produtos/css/catalog.css">
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+  	<link rel="stylesheet" href="css/colorbox.css" type="text/css">
+  </head>
+  <body>
+    <!-- Gerado pelo PTLKitWeb -->
+    <a href="index.html">Voltar</a></br>
+
+    <!--13/11/14 11:36:18-->	   <div class="site_content">
+		<script src="js/angular.min.js"></script>
+		<script src="js/buscaprodutoapp.js"></script>
+		<div ng-app="BuscaProdutoApp">
+		  <div ng-controller="BuscaProdutoController">
+			<div class="site_gallery">
+			  <table border="0" cellpadding="0">
+				<tr>
+				  <td><b>Digite o código: </b></td>
+				  <td><input ng-model="buscaCodigoTexto" ng-change="checkKonamiCode(buscaCodigoTexto)" /></td>
+				</tr>
+			  </table>
+			  <div class="container" id="gallery_container">
+				<div id="links">
+				  <ul class="products">
+					<li ng-repeat="produto in produtos" ng-show="produtoCorresponde(produto.codigo, produto.caption, produto.captionSemAcentos, buscaCodigoTexto, buscaDescricaoTexto)">
+					  <a class="product_group" href="fotos/{{produto.codigo}}.JPG" title="{{produto.caption}}">
+						<img src="fotos/thumb_{{produto.codigo}}.JPG" alt="{{produto.codigo}}" width="150"><br>
+						<span class="box_codigo">&nbsp;&nbsp;{{produto.codigo}}&nbsp;&nbsp;</span><br>
+					  </a>
+					</li>
+				  </ul>
+				</div> <!-- links -->
+			  </div> <!-- gallery_container -->
+			</div> <!-- site_gallery -->
+		  </div> <!-- div ng-controller -->
+		</div> <!-- div ng-app -->
+	   </div> <!-- end site_content -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
+	<script type="text/javascript" src="js/setup_colorbox.js"></script>
+    </body>
+    </html>
+    
