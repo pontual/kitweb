@@ -28,7 +28,7 @@
 				<div id="links">
 				  <ul class="products">
 					<li ng-repeat="produto in produtos" ng-show="produtoCorresponde(produto.codigo, produto.caption, produto.captionSemAcentos, buscaCodigoTexto, buscaDescricaoTexto)">
-					  <a class="product_group" href="fotos/{{produto.codigo}}.JPG" title="{{produto.caption}}">
+					  <a class="product_group" href="fotos/{{produto.codigo}}.JPG" title="{{produto.codigo}}<br>{{produto.caption}}">
 						<img src="fotos/thumb_{{produto.codigo}}.JPG" alt="{{produto.codigo}}"><br>
 						<span class="box_codigo">&nbsp;&nbsp;{{produto.codigo}}&nbsp;&nbsp;</span><br>
 						{{produto.caption}}<br>{{produto.dimensions}}
