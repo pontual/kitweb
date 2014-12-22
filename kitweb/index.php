@@ -59,6 +59,26 @@ foreach ($categorias as $categoria => $lista) {
     }
 }
 
+function comparar_categorias($categorias, $nome_a, $nome_b) {
+    print("Comparando $nome_a com $nome_b\n");
+    $diferenca = strcmp(join(",", $categorias[$nome_a]), join(",", $categorias[$nome_b]));
+    if ($diferenca != 0) {
+        print("Atencao: Listas de $nome_a e $nome_b nao correspondem\n");
+    }
+    return $diferenca;
+}
+
+if (comparar_categorias($categorias, 'Squeezes', 'Cantis') != 0) {
+    $errors = true;
+}
+
+if (comparar_categorias($categorias, 'Squeezes', 'Garrafas') != 0) {
+    $errors = true;
+}
+
+if (comparar_categorias($categorias, 'Ferramentas', 'Kits Ferramenta') != 0) {
+    $errors = true;
+}
 ?>
 
 <?php
@@ -66,7 +86,6 @@ if (!$errors) {
 ?>
 
 <a href="https://phpmyadmin.locaweb.com.br/" target="_blank">Acessar banco de dados</a>
-Server: 186.202.152.189
 
 Atenção: Recarregue esta página depois de alterar o banco de dados para fazer a verificação.
 

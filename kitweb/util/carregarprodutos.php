@@ -40,7 +40,7 @@ function getcategorias($db) {
     $categorias = array();
     try {
         foreach($db->query("SELECT * FROM categoria ORDER BY nome;") as $row) {
-            $categorias[$row['nome']] = preg_split('/\r\n|\r|\n/', $row['lista']);
+            $categorias[$row['nome']] = preg_split('/\r\n|\r|\n/', trim($row['lista']));
         }
         return $categorias;
     }
