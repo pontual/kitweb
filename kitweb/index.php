@@ -79,6 +79,10 @@ if (comparar_categorias($categorias, 'Squeezes', 'Garrafas') != 0) {
 if (comparar_categorias($categorias, 'Ferramentas', 'Kits Ferramenta') != 0) {
     $errors = true;
 }
+
+if (comparar_categorias($categorias, 'Kits Pinceis', 'Pinceis para Maquiagem') != 0) {
+    $errors = true;
+}
 ?>
 
 <?php
