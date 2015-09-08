@@ -89,6 +89,8 @@ if (comparar_categorias($categorias, 'Kits Pinceis', 'Pinceis para Maquiagem') !
 if (!$errors) {
 ?>
 
+<a href="produto_repr.php">Verificar que cada produto esteja em pelo menos uma categoria</a>
+    
 <a href="https://phpmyadmin.locaweb.com.br/" target="_blank">Acessar banco de dados</a>
 
 Atenção: Recarregue esta página depois de alterar o banco de dados para fazer a verificação.
