@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>PTL RH Contar notas</title>
+	<link rel="stylesheet" type="text/css" href="layout.css">
+  </head>
+  <body>
+	<div class="container">
+	  <b>Contar Qtde. de notas</b><br>
+	  <hr>
+	  Digite abaixo os valores,<br> somente um por linha<br>
+	  <textarea rows="23" cols="12" id="paymentList"></textarea><br>
+	  <input type="button" id="calcButton" value="Calcular"><br><br><br>
+	  
+	  <input type="button" id="resetButton" value="Limpar">
+	</div>
+
+	<div class="container">
+	  <div class="results">
+		<b>Resultado:</b><br><br>
+		
+		<table border="0" cellspacing="0" cellpadding="0">
+		  <tr>
+			<td bgcolor="#006600">
+			  <table border="0" cellspacing="1" cellpadding="3">
+				<tr> 
+				  <td bgcolor="#FFFFCC">Tipo de nota</td>
+				  <td bgcolor="#FFFFCC">Qtde.</td>
+				  <td bgcolor="#FFFFCC">Valor</td>
+				  <td bgcolor="#FFFFCC">Subtotal</td>
+				</tr>
+				<tr>
+				  <td bgcolor="#FFFFCC">R$ 1</td>
+				  <td bgcolor="#FFFFCC"><span id="count1"></span></td>
+				  <td bgcolor="#FFFFCC" align="right"><span id="total1"></span></td>
+				  <td bgcolor="#FFFFCC" align="right"><span id="subtotal1"></span></td>
+				</tr>
+				<tr>
+				  <td bgcolor="#FFFFCC">R$ 2</td>
+				  <td bgcolor="#FFFFCC"><span id="count2"></span></td>
+				  <td bgcolor="#FFFFCC" align="right"><span id="total2"></span></td>
+				  <td bgcolor="#FFFFCC" align="right"><span id="subtotal2"></span></td>
+				</tr>
+				<tr>
+				  <td bgcolor="#FFFFCC">R$ 5</td>
+				  <td bgcolor="#FFFFCC"><span id="count5"></span></td>
+				  <td bgcolor="#FFFFCC" align="right"><span id="total5"></span></td>
+				  <td bgcolor="#FFFFCC" align="right"><span id="subtotal5"></span></td>
+				</tr>
+				<tr>
+				  <td bgcolor="#FFFFCC">R$ 10</td>
+				  <td bgcolor="#FFFFCC"><span id="count10"></span></td>
+				  <td bgcolor="#FFFFCC" align="right"><span id="total10"></span></td>
+				  <td bgcolor="#FFFFCC" align="right"><span id="subtotal10"></span></td>
+				</tr>
+				<tr>
+				  <td bgcolor="#FFFFCC">R$ 20</td>
+				  <td bgcolor="#FFFFCC"><span id="count20"></span></td>
+				  <td bgcolor="#FFFFCC" align="right"><span id="total20"></span></td>
+				  <td bgcolor="#FFFFCC" align="right"><span id="subtotal20"></span></td>
+				</tr>
+				<tr>
+				  <td bgcolor="#FFFFCC">R$ 50</td>
+				  <td bgcolor="#FFFFCC"><span id="count50"></span></td>
+				  <td bgcolor="#FFFFCC" align="right"><span id="total50"></span></td>
+				  <td bgcolor="#FFFFCC" align="right"><span id="subtotal50"></span></td>
+				</tr>
+				<tr>
+				  <td bgcolor="#FFFFCC">R$ 100</td>
+				  <td bgcolor="#FFFFCC"><span id="count100"></span></td>
+				  <td bgcolor="#FFFFCC" align="right"><span id="total100"></span></td>
+				  <td bgcolor="#FFFFCC" align="right"><span id="subtotal100"></span></td>
+				</tr>
+
+			  </table>
+			</td>
+		  </tr>
+		</table>
+		
+		<br>
+		Total: <span id="grandTotal">0</span><br>
+		Número de pessoas: <span id="paymentCount">0</span>
+	  </div>
+	</div>
+	
+	<script src="contarnotas.js"></script>
+  </body>
+</html>
