@@ -1,8 +1,8 @@
 <?php
-require('util/ptldb.php');
+require('../../ptldb.php');
 
-require_once('util/carregarficha.php');
-require_once('util/carregarprodutos.php');
+require_once('../../carregarficha.php');
+require_once('../../carregarprodutos.php');
 
 $db = getconnection();
 $ficha = getficha($db);

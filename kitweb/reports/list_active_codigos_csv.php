@@ -1,6 +1,6 @@
 <?php
 
-require('../util/ptldb.php');
+require('../../../ptldb.php');
 
 require_once('../util/carregarprodutos.php');
 

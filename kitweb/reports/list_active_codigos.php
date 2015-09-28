@@ -1,6 +1,6 @@
 <?php
 
-require('../util/ptldb.php');
+require('../../../ptldb.php');
 
 require_once('../util/carregarprodutos.php');
 
@@ -29,6 +29,7 @@ array_multisort($active_codigos);
 <meta charset="utf-8">
 </head>
 <body>
+    <h1>Active codigos</h1>
 <table>
 <?php
 foreach ($active_codigos as $codigo) {

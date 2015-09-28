@@ -1,8 +1,6 @@
 <?php
 
-// use util/ptldb.php for production
-
-require('util/ptldb.php');
+require('../../ptldb.php');
 
 require_once('util/carregarficha.php');
 require_once('util/carregarprodutos.php');
