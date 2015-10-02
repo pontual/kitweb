@@ -60,19 +60,30 @@ function computeTotals() {
   billListIncreasing.forEach(function(bill) {
     var billId = bill.toString();
     var currentBillTotal = parseInt(billElem("count", billId).innerHTML, 10) * bill;
-    billElem("total", billId).innerHTML = currentBillTotal;
+    var tipo = (billId === "1" ? "moeda" : "nota");
+    billElem("total", billId).innerHTML = "R$ " + currentBillTotal + " em " + tipo + "(s) de " + billId;
     grandTotal += currentBillTotal;
 
-    billElem("subtotal", billId).innerHTML = grandTotal;
+    billElem("subtotal", billId).innerHTML = "R$ " + grandTotal;
   });
 
-  document.getElementById("grandTotal").innerHTML = grandTotal;
+  document.getElementById("grandTotal").innerHTML = "R$ " + grandTotal;
+}
+
+function appendNotas() {
+  billList.forEach(function(bill) {
+    var billId = bill.toString();
+    var tipo = (billId === "1" ? "moeda" : "nota");
+
+    billElem("count", bill).innerHTML += " " + tipo + "(s)";
+  });
 }
 
 calcButton.addEventListener("click", function() {
   reset();
   consumeList();
   computeTotals();
+  appendNotas();
 });
 
 resetButton.addEventListener("click", function() {
