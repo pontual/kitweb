@@ -27,7 +27,7 @@ function gerar_barra($prefixo, $categorias) {
 	$barra .= "		   </ul>\n";
 	$barra .= <<<END
 		<div class="site_footer">
-		  (C) 2015
+		  (C) 2016
 				  Pontual Exportação e<br>
 				  Importação Ltda.
 		</div> <!-- end site_footer -->
