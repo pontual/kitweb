@@ -24,7 +24,7 @@ print <<<END
   <body>
     <!-- Gerado pelo PTLKitWeb -->
 	<div class="site_header">
-      <a name="top">&nbsp;</a>
+      <a id="top">&nbsp;</a>
 	  <a href="{$PREFIXO}index.html">
 		<div class="site_logo">
 		  <img src="img/logo_transp.png" style="vertical-align: top;" alt="Pontual">
