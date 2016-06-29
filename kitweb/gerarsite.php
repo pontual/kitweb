@@ -19,7 +19,11 @@ function get_id($nome) {
 }
 
 function gerar_barra($prefixo, $categorias) {
-	$barra = "		<div class=\"site_sidebar\">\n		  <ul>\n <li><a href=\"busca.html\"><b><i>Busca por código</i></b></a></li>\n";
+  $barra = "		<div class=\"site_sidebar\">\n		  <ul>\n <li><a href=\"busca.html\"><b><i>Busca por código</i></b></a></li>\n";
+
+  // Add "Novidades"
+  $barra .= '<li style="background-color: #FF8;"><a href="pr_novidades.html" style="color: #009;"><b><i>Novidades</i></b></a></li>';
+  
 	foreach ($categorias as $nome => $categoria) {
 		$nome_id = get_id($nome);
 		$barra .= "			 <li><a href=\"{$prefixo}pr_{$nome_id}.html\">$nome</a></li>\n";
