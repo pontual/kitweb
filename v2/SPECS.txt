@@ -1,14 +1,39 @@
 TABLES
 
+[updates should be done in order below]
+
+v2_administrador
+
+EMAIL [varchar(100)]
+SENHA (bcrypt varchar (see PHP docs)) (if "", redirect to page to make a password)
+
 v2_ficha
 
 
-
-v2_categorias
-
+v2_produto
 
 
-v2_produtos
+
+v2_categoria
+
+ID [int]
+
+ETIQUETAS [textarea]
+  [newline-separated list]
+  
+CODIGOS [textarea]
+  [newline-separated list] (like existing table categorias)
+
+v2_item_menu
+
+ID [int]
+
+ETIQUETA [varchar(50)]
+
+SUBITENS [textarea]
+  [newline-separated list of categorias ids]
+  (if subitens is a single id, the item_menu becomes a direct link)
+
 
 
 

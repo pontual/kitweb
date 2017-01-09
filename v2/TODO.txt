@@ -4,7 +4,7 @@
 
 [  ] reset password by sending email
 
-[  ] as a fallback, reset password through direct db access (using a magic word: "esqueci")
+[  ] Register admins by directly editing DB
 
 [  ] Generate ("install") tables if they do not exist
 
