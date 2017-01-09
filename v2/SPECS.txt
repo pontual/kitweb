@@ -1,0 +1,8 @@
+TABLES
+
+v2_ficha
+
+v2_categorias
+
+v2_produtos
+

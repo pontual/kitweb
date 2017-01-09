@@ -1,0 +1,11 @@
+[  ] copiar html de "ptl2016"
+
+[  ] hashed password: access through https://pontualimportbrinde1.websiteseguro.com/
+
+[  ] find a way to reset password through direct db access (use a magic word: "esqueci")
+
+[  ] Generate tables if they do not exist
+
+[  ] Upload photos through PHP -- edit PHP settings? As a fallback, provide instructions for uploading through WinSCP
+
+[  ] Escape HTML (htmlspecialchars)
