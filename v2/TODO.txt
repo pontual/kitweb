@@ -2,10 +2,27 @@
 
 [  ] hashed password: access through https://pontualimportbrinde1.websiteseguro.com/
 
-[  ] find a way to reset password through direct db access (use a magic word: "esqueci")
+[  ] reset password by sending email
 
-[  ] Generate tables if they do not exist
+[  ] as a fallback, reset password through direct db access (using a magic word: "esqueci")
+
+[  ] Generate ("install") tables if they do not exist
 
 [  ] Upload photos through PHP -- edit PHP settings? As a fallback, provide instructions for uploading through WinSCP
 
 [  ] Escape HTML (htmlspecialchars)
+
+[  ] Busca - normalize text (keep as separate column, all lowercase a-z in db)
+
+[  ] Button to perform search
+
+[  ] Admin for Menu: top level categories (may be a link or folder), add subitems with jQuery UI draggable
+
+[  ] Admin for subitems
+
+[  ] Ensure admin pages are using SSL
+
+if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on') {
+    header('Location: https://mywebserver.com/login.php');
+    exit;
+}
