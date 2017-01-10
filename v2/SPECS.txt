@@ -1,3 +1,9 @@
+FILE STRUCTURE
+
+index.php
+login.php
+
+
 TABLES
 
 [updates should be done in order below]
