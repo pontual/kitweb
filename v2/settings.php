@@ -1,4 +1,8 @@
 <?php
+
+// Set to false in production and save DB credentials in
+// "db_production.php"
+
 $DEBUG = true;
 
 if ($DEBUG) {

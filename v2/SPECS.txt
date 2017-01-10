@@ -60,6 +60,7 @@ v2_ficha
 
 v2_produto
 
+  PRECO [varchar(16)] (codigo such as "060/200")
 
 
 v2_categoria
