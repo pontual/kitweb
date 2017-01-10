@@ -1,10 +1,51 @@
+==============
+DATA STRUCTURE
+==============
+
+The Main Menu, or sidebar's, top level has folders and individual links to a category (mugs, keychains, etc.).
+
+A category may have synonyms (mugs = cups), and a administrator should only need to update a single name out of the set of synonyms.
+
+A category's page has a grid of photos of a list of products.
+
+==============
 FILE STRUCTURE
+==============
 
-index.php
+install.php (check if a table exists, if not, create it. use a function)
+
 login.php
+logout.php
 
+index.php (this file and all others following it need to require auth)
 
+ficha_edit_form.php (pre-filled form, add optional notice text here)
+ficha_edit_exec.php (update DB)
+
+produto_add_form.php (blank form)
+produto_add_exec.php (insert into DB)
+produto_edit_form.php (pre-filled form)
+produto_edit_exec.php (update DB)
+produto_delete_exec.php (delete from DB)
+produto_list.php
+
+categoria_add_form.php
+categoria_add_exec.php
+categoria_edit_form.php
+categoria_edit_exec.php
+categoria_delete_exec.php
+categoria_list.php
+
+item_de_menu_add_form.php
+item_de_menu_add_exec.php
+item_de_menu_edit_form.php
+item_de_menu_edit_exec.php
+item_de_menu_delete_exec.php
+item_de_menu_list.php
+
+======
 TABLES
+======
 
 [updates should be done in order below]
 
@@ -16,35 +57,34 @@ SENHA (bcrypt varchar (see PHP docs)) (if "", redirect to page to make a passwor
 v2_ficha
 
 
+
 v2_produto
 
 
 
 v2_categoria
 
-ID [int]
+  ID [int]
 
-ETIQUETAS [textarea]
-  [newline-separated list]
+  ETIQUETAS [textarea]
+    [newline-separated list]
   
-CODIGOS [textarea]
-  [newline-separated list] (like existing table categorias)
+  CODIGOS [textarea]
+    [newline-separated list] (like existing table categorias)
 
-v2_item_menu
+v2_item_de_menu
 
-ID [int]
+  ID [int]
 
-ETIQUETA [varchar(50)]
+  ETIQUETA [varchar(50)]
 
-SUBITENS [textarea]
-  [newline-separated list of categorias ids]
-  (if subitens is a single id, the item_menu becomes a direct link)
+  SUBITENS [textarea]
+    [newline-separated list of categorias ids]
+    (if subitens is a single id, the item_de_menu becomes a direct link)
 
-
-
-
-
-AUTH
+==============
+AUTHENTICATION
+==============
 
 http://stackoverflow.com/questions/1243150/php-sessions-to-authenticate-user-on-login-form
 

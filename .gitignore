@@ -5,3 +5,4 @@ fotos/*.JPG
 fotos/*.Jpg
 kitweb/util/realdb.php
 kitweb/util/ptldb.php
+v2/db_production.php
