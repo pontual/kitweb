@@ -1,7 +1,5 @@
 [  ] copiar html de "ptl2016"
 
-[  ] hashed password: access through https://pontualimportbrinde1.websiteseguro.com/
-
 [  ] reset password by sending email
 
 [OK] Generate ("install") tables if they do not exist
@@ -19,11 +17,6 @@
 [  ] Admin for Menu: top level categories (may be a link or folder),
      add subitems with jQuery UI draggable
 
-[  ] Admin for subitems
-
 [OK] Ensure admin pages are using SSL
 
 [  ] Leave a space in the header/banner for announcements and alerts
-
-[  ] Write a notice to do a manual backup before updating
-
