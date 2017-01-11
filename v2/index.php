@@ -7,8 +7,7 @@
     <body>
         <?php
 
-        $last_updated = "9 jan 2017"
-
+        $last_updated = "9 jan 2017";
         ?>
 
         Última atualização: <?= $last_updated ?>

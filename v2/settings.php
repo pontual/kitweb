@@ -3,15 +3,26 @@
 // Set to false in production and save DB credentials in
 // "db_production.php"
 
+// Must create database manually before trying to install tables
+
 $DEBUG = true;
 
 if ($DEBUG) {
-  // echo "Using Development Mode";
-  include("db_local.php");
+  // In Development Mode
+  include("kitweb_v2_db_local.php");
 } else {
-  // echo "In production mode";
-  include("db_production.php");
+  // In production mode
+  include("../../kitweb_v2_db_production.php");
 }
 
-echo $DB_MODE;
+function getConnection($dbHost, $dbUser, $dbPassword) {
+  try {
+    $dbh = new PDO($dbHost, $dbUser, $dbPassword, array(PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    return $dbh;
+  } catch (PDOException $e) {
+    print("Error " . $e->getMessage() . "<br>");
+    die();
+  }
+}
+
 ?>

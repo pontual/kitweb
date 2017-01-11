@@ -12,7 +12,9 @@ A category's page has a grid of photos of a list of products.
 FILE STRUCTURE
 ==============
 
+settings.php (define local or production variables)
 install.php (check if a table exists, if not, create it. use a function)
+delete_all.php (execute only if $DEBUG=true)
 
 login.php
 logout.php
@@ -61,7 +63,8 @@ v2_ficha
 v2_produto
 
   PRECO [varchar(16)] (codigo such as "060/200")
-
+  PESO
+  MEDIDAS
 
 v2_categoria
 
