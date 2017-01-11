@@ -17,12 +17,12 @@
         try {
           $dbh->exec("create table if not exists $tableName
         ($columns) engine=InnoDB");
-          print("Table $tableName created");
+          print("CREATED: table $tableName");
         } catch (PDOException $e) {
           print("Error " . $e->getMessage() . "<br>");
         }
       } else {
-        print("Table $tableName already exists");
+        print("ALREADY EXISTS: table $tableName");
       }
       print("<br>");
     }

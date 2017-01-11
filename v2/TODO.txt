@@ -30,3 +30,4 @@ if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on') {
 [  ] Leave a space in the header/banner for announcements and alerts
 
 [  ] Write a notice to do a manual backup before updating
+

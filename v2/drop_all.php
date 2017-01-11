@@ -16,23 +16,24 @@
       if (tableExistsP($dbh, $tableName)) {
         try {
           $dbh->exec("drop table $tableName");
-          print("Table $tableName dropped");
+          print("DROPPED table $tableName");
         } catch (PDOException $e) {
           print("Error " . $e->getMessage() . "<br>");
         }
       } else {
-        print("Table $tableName does not exist");
+        print("DOES NOT EXIST: Table $tableName");
       }
       print("<br>");
     }
 
     if ($DEBUG) {
-      foreach ($TABLES as $tableName => $columns) {
+      foreach (array_reverse($TABLES) as $tableName => $columns) {
         dropTable($dbh, $tableName, $columns);
       }
+      print("Completed dropping tables");
     } else {
-      print("Enable debug mode to drop all tables.");
+      print("Switch to debug mode to drop all tables.");
+      
     }
 
-    print("Completed dropping tables");
     ?>

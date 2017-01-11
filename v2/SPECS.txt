@@ -58,33 +58,53 @@ SENHA (bcrypt varchar (see PHP docs)) (if "", redirect to page to make a passwor
 
 v2_ficha
 
-
+  ID
+  RAZAO_SOCIAL
+  NOME_FANTASIA
+  SLOGAN
+  TELEFONE
+  ENDERECO
+  AVISO
 
 v2_produto
 
+  ID [int]
+  CODIGO [varchar(16)]
+  DESCRICAO [varchar(200)]
+  PESO [varchar(32)]
+  MEDIDAS [varchar(50)]
   PRECO [varchar(16)] (codigo such as "060/200")
-  PESO
-  MEDIDAS
 
 v2_categoria
+  // editable container for list of produtos
 
   ID [int]
 
-  ETIQUETAS [textarea]
-    [newline-separated list]
+  NOME [varchar(80)]
+
+v2_produtos_de_categoria
+  // assign produtos to categoria
   
-  CODIGOS [textarea]
-    [newline-separated list] (like existing table categorias)
+  ID_CATEGORIA [FK]
 
-v2_item_de_menu
+  ID_PRODUTO [FK]
+
+v2_pasta_de_menu
 
   ID [int]
 
-  ETIQUETA [varchar(50)]
+  NOME [varchar(80)]
 
-  SUBITENS [textarea]
-    [newline-separated list of categorias ids]
-    (if subitens is a single id, the item_de_menu becomes a direct link)
+v2_link_de_menu
+
+  ID [int]
+  
+  ID_PASTA [FK]
+  
+  ID_CATEGORIA [FK]
+  
+  NOME [varchar(80)]
+
 
 ==============
 AUTHENTICATION
