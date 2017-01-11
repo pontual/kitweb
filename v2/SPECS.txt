@@ -16,34 +16,39 @@ settings.php (define local or production variables)
 install.php (check if a table exists, if not, create it. use a function)
 delete_all.php (execute only if $DEBUG=true)
 
-login.php
-logout.php
+* administrator_add_form.php
+* administrator_add_exec.php
+  administrator_edit_form.php
+  administrator_edit_exec.php
 
-index.php (this file and all others following it need to require auth)
+  login.php
+  logout.php
 
-ficha_edit_form.php (pre-filled form, add optional notice text here)
-ficha_edit_exec.php (update DB)
+  index.php (this file and all others following it need to require auth)
 
-produto_add_form.php (blank form)
-produto_add_exec.php (insert into DB)
-produto_edit_form.php (pre-filled form)
-produto_edit_exec.php (update DB)
-produto_delete_exec.php (delete from DB)
-produto_list.php
+  ficha_edit_form.php (pre-filled form, add optional notice text here)
+  ficha_edit_exec.php (update DB)
 
-categoria_add_form.php
-categoria_add_exec.php
-categoria_edit_form.php
-categoria_edit_exec.php
-categoria_delete_exec.php
-categoria_list.php
+  produto_add_form.php (blank form)
+  produto_add_exec.php (insert into DB)
+  produto_edit_form.php (pre-filled form)
+  produto_edit_exec.php (update DB)
+  produto_delete_exec.php (delete from DB)
+  produto_list.php
 
-item_de_menu_add_form.php
-item_de_menu_add_exec.php
-item_de_menu_edit_form.php
-item_de_menu_edit_exec.php
-item_de_menu_delete_exec.php
-item_de_menu_list.php
+  categoria_add_form.php
+  categoria_add_exec.php
+  categoria_edit_form.php
+  categoria_edit_exec.php
+  categoria_delete_exec.php
+  categoria_list.php
+
+  item_de_menu_add_form.php
+  item_de_menu_add_exec.php
+  item_de_menu_edit_form.php
+  item_de_menu_edit_exec.php
+  item_de_menu_delete_exec.php
+  item_de_menu_list.php
 
 ======
 TABLES

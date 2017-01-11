@@ -11,7 +11,7 @@ id int not null auto_increment,
 email varchar(80) not null,
 username varchar(80) not null,
 password_hash varchar(255) not null,
-constraint pk_v2_administrador primary key (id)
+constraint pk_v2_administrador primary key (id, username)
 ",
 
   "v2_ficha" => "

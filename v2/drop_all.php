@@ -1,10 +1,15 @@
 <p>
     <?php
 
+    // in addition to $DEBUG being true, $ENABLE_DROP_ALL must also be
+    // true
+    $ENABLE_DROP_ALL = false;
+    
+    require_once("https_redirect.php");
+    require_once("html_head.php");
     require_once("settings.php");
+    require_once("db_conn.php");
     require_once("tables.php");
-
-    $dbh = getConnection($dbHost, $dbUser, $dbPassword);
 
     function tableExistsP($dbh, $tableName) {
       $stmt = $dbh->prepare("show tables like '$tableName'");
@@ -26,13 +31,13 @@
       print("<br>");
     }
 
-    if ($DEBUG) {
+    if ($DEBUG && $ENABLE_DROP_ALL) {
       foreach (array_reverse($TABLES) as $tableName => $columns) {
         dropTable($dbh, $tableName, $columns);
       }
       print("Completed dropping tables");
     } else {
-      print("Switch to debug mode to drop all tables.");
+      print("Switch to debug mode and enable drop to drop all tables.");
       
     }
 
