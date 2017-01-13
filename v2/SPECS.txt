@@ -21,34 +21,44 @@ delete_all.php (execute only if $DEBUG=true)
   administrator_edit_form.php
   administrator_edit_exec.php
 
-  login.php
+  login_form.php
+  login_exec.php
   logout.php
 
   index.php (this file and all others following it need to require auth)
 
-  ficha_edit_form.php (pre-filled form, add optional notice text here)
+  ficha_list.php
+* ficha_add_form.php (blank form)
+* ficha_add_exec.php (insert into DB)
+  ficha_edit_form.php (pre-filled form)
   ficha_edit_exec.php (update DB)
+  ficha_delete_confirm.php (confirmation yes/no message)
+  ficha_delete_exec.php (delete from DB)
 
-  produto_add_form.php (blank form)
-  produto_add_exec.php (insert into DB)
-  produto_edit_form.php (pre-filled form)
-  produto_edit_exec.php (update DB)
-  produto_delete_exec.php (delete from DB)
+  produto_view.php
   produto_list.php
-
+  produto_add_form.php
+  produto_add_exec.php
+  produto_edit_form.php
+  produto_edit_exec.php
+  produto_delete_confirm.php 
+  produto_delete_exec.php
+ 
+  categoria_view.php
+  categoria_list.php
   categoria_add_form.php
   categoria_add_exec.php
   categoria_edit_form.php
   categoria_edit_exec.php
   categoria_delete_exec.php
-  categoria_list.php
 
+  item_de_menu_view.php
+  item_de_menu_list.php
   item_de_menu_add_form.php
   item_de_menu_add_exec.php
   item_de_menu_edit_form.php
   item_de_menu_edit_exec.php
   item_de_menu_delete_exec.php
-  item_de_menu_list.php
 
 ======
 TABLES
@@ -70,7 +80,7 @@ v2_ficha
   TELEFONE
   ENDERECO
   AVISO
-
+  ATIVO (1 or 0) radio button to select which ficha to use
 v2_produto
 
   ID [int]
@@ -140,7 +150,7 @@ if( isset($_POST['username']) && isset($_POST['password']) )
 // For secure pages
 
 session_start();
-session_regenerate_id();
+// session_regenerate_id();  // MY NOTE: not sure if it is useful
 if(!isset($_SESSION['user']))      // if there is no valid session
 {
     header("Location: login.html");

@@ -27,6 +27,9 @@ require_once("html_head.php");
                 <td><input type="password" name="passwordRepeated" id="pw2"> <span id="passwordsMatch"></span></td>
             </tr>
             <tr>
+                <td>Código de autorização</td>
+                <td><input type="password" name="codigoDeAutorizacao"></td>
+            <tr>
                 <td>&nbsp;</td>
                 <td><input type="submit" id="submitInput" disabled></td>
             </tr>

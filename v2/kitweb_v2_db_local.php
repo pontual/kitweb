@@ -5,6 +5,6 @@ $dbUser = 'root';
 $dbPassword = '';
 
 // password to create new administrators
-$superuserPassword = "secret";
+$codigoDeAutorizacao = "secreto";
 
 ?>

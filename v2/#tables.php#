@@ -3,17 +3,6 @@
 // array of table names (keys) and corresponding columns (values)
 // used in install.php and delete_all.php
 
-/* Ficha
-   
-id int not null auto_increment,
-razao_social varchar(255) not null,
-nome_fantasia varchar(255),
-slogan varchar(255),
-telefone varchar(255),
-endereco varchar(500),
-aviso varchar(500),
-*/
-
 $TABLES = [
   
   "v2_administrador" => "
@@ -28,9 +17,7 @@ constraint pk_v2_administrador primary key (id, username)
   "v2_ficha" => "
 
 id int not null auto_increment,
-campo varchar(80),
-valor varchar(255),
-constraint pk_v2_ficha primary key (id)
+
 ",
 
   "v2_produto" => "

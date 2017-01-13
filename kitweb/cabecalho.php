@@ -40,11 +40,7 @@ print <<<END
           <span class="telefones">
             {$ficha['telefone']}<br>
           </span>
-          <br>
 
-<!-- TEMPORARY PHONE PROBLEM -->
-<span style="color: red; font-weight: bold;">ATENÇÃO:</span> O telefone 3312-8845 está com problemas no momento.<br>Por favor use os outros números. 
- 
 		</div> <!-- end site_banner -->
         
 	  <div class="site_address">

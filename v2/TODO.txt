@@ -1,6 +1,6 @@
 [  ] copiar html de "ptl2016"
 
-[  ] reset password by sending email
+[NO] reset password by sending email
 
 [OK] Generate ("install") tables if they do not exist
 
@@ -20,3 +20,6 @@
 [OK] Ensure admin pages are using SSL
 
 [  ] Leave a space in the header/banner for announcements and alerts
+
+[NO] CSRF token?
+

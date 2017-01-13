@@ -17,15 +17,20 @@ if ($checkUsernameResult === "0") {  // username not found
     
     print('Senhas devem ser idênticas. <a href="javascript:history.back()">Tente novamente.</a>');
   } else {
-    
-    // proceed with account creation
-    $sqlCreateUser = "insert into v2_administrador (email, username, password_hash)
+
+    // check codigoDeAutorizacao
+    if ($_POST['codigoDeAutorizacao'] === $codigoDeAutorizacao) {
+      // proceed with account creation
+      $sqlCreateUser = "insert into v2_administrador (email, username, password_hash)
 values (:email, :username, :password_hash)";
-    $sth = $dbh->prepare($sqlCreateUser);
-    $sth->execute([":email" => $_POST['email'],
-                   ":username" => $_POST['username'],
-                   ":password_hash" => password_hash($_POST['password'], PASSWORD_DEFAULT)]);
-    print('Conta criada com sucesso.');
+      $sth = $dbh->prepare($sqlCreateUser);
+      $sth->execute([":email" => $_POST['email'],
+                     ":username" => $_POST['username'],
+                     ":password_hash" => password_hash($_POST['password'], PASSWORD_DEFAULT)]);
+      print('Conta criada com sucesso.');
+    } else {
+      print('Código de autorização incorreta. <a href="javascript:history.back()">Tente novamente.</a>');
+    }
   }
 } else {
   print('Nome de usuário indisponível. <a href="javascript:history.back()">Tente novamente.</a>');
