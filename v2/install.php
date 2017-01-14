@@ -1,7 +1,7 @@
 <p>
     <?php
 
-    require_once("https_redirect.php");
+    // require_once("https_redirect.php");
     require_once("settings.php");
     require_once("db_conn.php");
     require_once("tables.php");
