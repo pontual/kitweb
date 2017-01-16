@@ -53,8 +53,10 @@ constraint pk_v2_categoria primary key (id)
 
   "v2_produtos_de_categoria" => "
 
+id int not null auto_increment,
 id_categoria int not null,
 id_produto int not null,
+constraint pk_v2_produtos_de_categoria primary key (id),
 constraint fk_v2_produtos_de_categoria_categoria foreign key (id_categoria)
   references v2_categoria (id),
 constraint fk_v2_produtos_de_categoria_produto foreign key (id_produto)

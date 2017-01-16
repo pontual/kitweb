@@ -7,3 +7,8 @@ td {
     border: 1px solid #ccc;
     padding: 5px 10px;
 }
+
+.dbValue {
+    font-family: monospace;
+    color: #050;
+}

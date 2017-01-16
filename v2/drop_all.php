@@ -4,8 +4,8 @@
     // in addition to $DEBUG being true, $ENABLE_DROP_ALL must also be
     // true
     
-    // $ENABLE_DROP_ALL = true;
     $ENABLE_DROP_ALL = false;
+    // $ENABLE_DROP_ALL = true;
     
     require_once("https_redirect.php");
     require_once("html_head.php");

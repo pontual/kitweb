@@ -15,4 +15,6 @@ if ($DEBUG) {
   include("../../kitweb_v2_db_production.php");
 }
 
+$fotos_folder = "../../fotos/";
+
 ?>
