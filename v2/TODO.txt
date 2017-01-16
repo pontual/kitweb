@@ -28,3 +28,5 @@
 [OK] Produto edit: allow reupload of foto
 
 [OK] Produto edit: check if codigo was rewritten and overwrites another
+
+[  ] Fix header calls to appear before content (before common)
