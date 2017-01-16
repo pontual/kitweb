@@ -13,8 +13,8 @@ require_once("common.php");
         print(generateRows("produto_add_exec.php", [
           "Código" => "codigo",
           "Descrição" => "descricao",
-          "Peso" => "peso",
-          "Medidas" => "medidas",
+          "Peso (gramas)" => "peso",
+          "Medidas (L x C x A, cm)" => "medidas",
           "Código de preço" => "preco",
         ]));
 

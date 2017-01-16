@@ -13,7 +13,7 @@ if ((int) $result['ct'] === 0) {
   $sth = $dbh->prepare("insert into v2_produto (codigo, descricao, peso, medidas, preco)
   values (:codigo, :descricao, :peso, :medidas, :preco)");
 
-  $sth->execute([ ":codigo" => $_POST['codigo'],
+  $sth->execute([ ":codigo" => strtoupper($_POST['codigo']),
                   ":descricao" => $_POST['descricao'],
                   ":peso" => $_POST['peso'],
                   ":medidas" => $_POST['medidas'],
@@ -34,7 +34,7 @@ if ((int) $result['ct'] === 0) {
     smart_resize_image($uploadfile, null, 200, 150, true, $thumbfile, false, false, 100);
   }
 
-  // header("Location: produto_list.php");
+  header("Location: produto_list.php");
 } else {
   print("Código já existe. <a href='javascript:history.back();'>Voltar</a>");
 }

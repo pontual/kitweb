@@ -24,3 +24,5 @@
 [NO] CSRF token?
 
 [  ] Paginate produtos
+
+[  ] Produto edit: allow reupload of foto
