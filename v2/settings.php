@@ -16,5 +16,7 @@ if ($DEBUG) {
 }
 
 $fotos_folder = "../../fotos/";
+$thumbWidth = 200;
+$thumbHeight = 150;
 
 ?>

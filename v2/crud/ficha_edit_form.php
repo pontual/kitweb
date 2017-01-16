@@ -12,10 +12,12 @@ if (isset($_GET['id'])) {
   $sth->execute([ ":id" => $_GET['id']]);
   $result = $sth->fetch();
   
-  print(generateEditForm("ficha_edit_exec.php", [
-    "id" => [ "name" => "id", "value" => $result['id'] ],
+  print(generateEditForm("ficha_edit_exec.php", false, [
     "Campo" => [ "name" => "campo", "value" => $result['campo'] ],
-    "Valor" => [ "name" => "valor", "value" => $result['valor'] ] ]));
+    "Valor" => [ "name" => "valor", "value" => $result['valor'] ] ],
+                         [ "id" => $result['id'],
+                           "campoAntigo" => $result['campo'] ] ));
+
 
 } else {
   print("Nenhum id solicitado.");

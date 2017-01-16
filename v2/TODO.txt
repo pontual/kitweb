@@ -7,7 +7,7 @@
 [  ] Upload photos through PHP -- edit PHP settings?
      As a fallback, provide instructions for uploading through WinSCP
 
-[  ] Escape HTML (htmlspecialchars)
+[  ] Escape HTML in public facing pages (htmlspecialchars)
 
 [  ] Busca - normalize text
      (keep as separate column, all lowercase a-z in db)
@@ -17,12 +17,14 @@
 [  ] Admin for Menu: top level categories (may be a link or folder),
      add subitems with jQuery UI draggable
 
-[OK] Ensure admin pages are using SSL
-
 [  ] Leave a space in the header/banner for announcements and alerts
+
+[OK] Ensure admin pages are using SSL
 
 [NO] CSRF token?
 
-[  ] Paginate produtos
+[OK] Paginate produtos
 
-[  ] Produto edit: allow reupload of foto
+[OK] Produto edit: allow reupload of foto
+
+[OK] Produto edit: check if codigo was rewritten and overwrites another

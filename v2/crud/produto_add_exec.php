@@ -31,7 +31,7 @@ if ((int) $result['ct'] === 0) {
     move_uploaded_file($_FILES["arquivo_foto"]["tmp_name"], $uploadfile);
 
     // create thumbnail
-    smart_resize_image($uploadfile, null, 200, 150, true, $thumbfile, false, false, 100);
+    smart_resize_image($uploadfile, null, $thumbWidth, $thumbHeight, true, $thumbfile, false, false, 100);
   }
 
   header("Location: produto_list.php");
