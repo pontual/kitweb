@@ -17,3 +17,6 @@ require_once("common.php");
 </table>
 
 <?php require_once("footer.php"); ?>
+
+<?php
+throw new Exception("Threw an exception");
