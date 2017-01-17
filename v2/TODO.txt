@@ -33,3 +33,4 @@
 
 [NO] Delete images on deleting product?
 
+[  ] Stronger .htaccess user (pontual) and password
