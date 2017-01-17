@@ -3,7 +3,7 @@
 require_once("common.php");
 
 if (isset($_GET['id'])) {
-  $sql = 'select codigo, descricao, peso, medidas, preco from v2_produto where id = :id';
+  $sql = 'select codigo, descricao, peso, medidas, preco, atualizado from v2_produto where id = :id';
   $sth = $dbh->prepare($sql); 
   $sth->execute([ ":id" => $_GET['id']]);
   $result = $sth->fetch();
@@ -21,7 +21,7 @@ if (isset($_GET['id'])) {
     Medidas: <?= $result['medidas'] ?><br>
     Preço:   <?= $result['preco'] ?><br>
 
-    <img src="<?= $fotos_folder ?><?= $result['codigo'] ?>_thumb.jpg" alt="<?= $result['codigo'] ?>">
+    <img src="<?= $fotos_folder ?><?= $result['codigo'] ?>_<?= $result['atualizado'] ?>_thumb.jpg" alt="<?= $result['codigo'] ?>">
 <?php
 
     } else {

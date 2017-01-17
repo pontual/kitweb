@@ -7,10 +7,16 @@ require_once("common.php");
     Produtos
 </h1>
 
-<p>
+<h3>
     + <a href="produto_add_form.php">Adicionar produto</a>
-</p>
+</h3>
 
+<h3>
+    <form action="produto_locate.php" method="POST"> 
+        Editar o código: <input name="codigo">
+        <input type="submit"> 
+    </form>
+</h3>
 
 <?php
 
@@ -91,12 +97,13 @@ if ($currentPage < $totalPages) {
         <td>Medidas</td>
         <td>Cód. preço</td>
         <td>Foto</td>
+        <td>Atualizado</td> 
         <td>&nbsp;</td>
     </tr>
 
     <?php
     
-    $sql = "select id, codigo, descricao, peso, medidas, preco from v2_produto order by codigo limit $offset, $rowsPerPage";
+    $sql = "select id, codigo, descricao, peso, medidas, preco, atualizado from v2_produto order by codigo limit $offset, $rowsPerPage";
     foreach ($dbh->query($sql) as $row) {
     ?>
 
@@ -109,11 +116,11 @@ if ($currentPage < $totalPages) {
             <td><?= $row['preco'] ?></td>
             <td>
                 <?php
-                if (file_exists($fotos_folder . $row['codigo'] . ".jpg")) {
+                if (file_exists($fotos_folder . $row['codigo'] . "_{$row['atualizado']}.jpg")) {
                 ?>
                     
-                <a href="<?= $fotos_folder ?><?= $row['codigo'] ?>.jpg">
-                    <img src="<?= $fotos_folder ?><?= $row['codigo'] ?>_thumb.jpg" alt="foto <?= $row['codigo'] ?>">
+                <a href="<?= $fotos_folder ?><?= $row['codigo'] ?>_<?= $row['atualizado'] ?>.jpg">
+                    <img src="<?= $fotos_folder ?><?= $row['codigo'] ?>_<?= $row['atualizado'] ?>_thumb.jpg" alt="foto <?= $row['codigo'] ?>">
                 </a>
                 
                 <?php
@@ -123,6 +130,7 @@ if ($currentPage < $totalPages) {
                 ?>
                 
             </td>
+            <td><?= $row['atualizado'] ?></td>
             <td><a href="produto_delete_confirm.php?id=<?= $row['id'] ?>">Excluir</a></td>
         </tr>
     <?php

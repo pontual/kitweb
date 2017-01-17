@@ -41,6 +41,7 @@ descricao varchar(200) not null,
 peso varchar(32),
 medidas varchar(50),
 preco varchar(16),
+atualizado varchar(16),
 constraint pk_v2_produto primary key (id)
 ",
 

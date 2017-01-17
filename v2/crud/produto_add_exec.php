@@ -10,19 +10,23 @@ $result = $sth->fetch();
 
 if ((int) $result['ct'] === 0) {
 
-  $sth = $dbh->prepare("insert into v2_produto (codigo, descricao, peso, medidas, preco)
-  values (:codigo, :descricao, :peso, :medidas, :preco)");
+  // timestamp
+  $atualizado = gmdate("YmdHis", time());
+  
+  $sth = $dbh->prepare("insert into v2_produto (codigo, descricao, peso, medidas, preco, atualizado)
+  values (:codigo, :descricao, :peso, :medidas, :preco, :atualizado)");
 
   $sth->execute([ ":codigo" => strtoupper($_POST['codigo']),
                   ":descricao" => $_POST['descricao'],
                   ":peso" => $_POST['peso'],
                   ":medidas" => $_POST['medidas'],
-                  ":preco" => $_POST['preco'] ]);
+                  ":preco" => $_POST['preco'],
+                  ":atualizado" => $atualizado ]);
 
   // upload foto and create thumbnail
 
-  $uploadfile = $fotos_folder . $_POST['codigo'] . ".jpg";
-  $thumbfile = $fotos_folder . $_POST['codigo'] . "_thumb.jpg";
+  $uploadfile = $fotos_folder . $_POST['codigo'] .  "_$atualizado" . ".jpg";
+  $thumbfile = $fotos_folder . $_POST['codigo'] . "_$atualizado" . "_thumb.jpg";
 
   if ($_FILES["arquivo_foto"]["error"] === 0) {
     $check = getimagesize($_FILES["arquivo_foto"]["tmp_name"]);

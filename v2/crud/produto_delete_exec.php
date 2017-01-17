@@ -8,9 +8,9 @@ if (isset($_GET['id'])) {
   $sth = $dbh->prepare($sql);
   $sth->execute([ ":id" => $_GET['id']]);
 
-  print("Produto excluido.");
+  // print("Produto excluido.");
 
-  // header("Location: produto_list.php");
+  header("Location: produto_list.php");
 } else {
   require_once("html_head_navbar.php");
   print("Nenhum id solicitado.");

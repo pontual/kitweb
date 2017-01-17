@@ -11,12 +11,15 @@ $result = $sth->fetch();
 
 if ($codigoNovo === $codigoAntigo || (int) $result['ct'] === 0) {
 
+  $atualizado = gmdate("YmdHis", time());
+  
   $sth = $dbh->prepare("update v2_produto set
 codigo = :codigo,
 descricao = :descricao,
 peso = :peso,
 medidas = :medidas,
-preco = :preco
+preco = :preco,
+atualizado = :atualizado
 where id = :id");
 
 
@@ -25,7 +28,8 @@ where id = :id");
                   ":descricao" => $_POST['descricao'],
                   ":peso" => $_POST['peso'],
                   ":medidas" => $_POST['medidas'],
-                  ":preco" => $_POST['preco'],                
+                  ":preco" => $_POST['preco'],
+                  ":atualizado" => $atualizado,
                   ":id" => $_POST['id']]);
 
   // print("Produto atualizado.");
@@ -33,8 +37,8 @@ where id = :id");
   if ($_FILES["arquivo_foto"]['size'] !== 0 && $_FILES["arquivo_foto"]['error'] === UPLOAD_ERR_OK) {
     // update foto
 
-    $uploadfile = $fotos_folder . $codigoNovo . ".jpg";
-    $thumbfile = $fotos_folder . $codigoNovo . "_thumb.jpg";
+    $uploadfile = $fotos_folder . $codigoNovo . "_$atualizado" . ".jpg";
+    $thumbfile = $fotos_folder . $codigoNovo . "_$atualizado" . "_thumb.jpg";
 
     $check = getimagesize($_FILES["arquivo_foto"]["tmp_name"]);
     if ($check !== false) {
