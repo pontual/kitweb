@@ -2,7 +2,7 @@
 
 $pageTitle = "";
 
-require_once("common.php");
+require_once("get_dbh.php");
 
 if (isset($_GET['id'])) {
   
@@ -10,18 +10,12 @@ if (isset($_GET['id'])) {
   $sth = $dbh->prepare($sql);
   $sth->execute([ ":id" => $_GET['id']]);
 
-  print("Campo excluido.");
+  // print("Campo excluido.");
 
   header("Location: ficha_list.php");
 } else {
+  require_once("html_head_navbar.php");
   print("Nenhum id solicitado.");
-}
-
-?>
-
-
-<?php
-
-require_once("footer.php");
+  require_once("footer.php");
   
-?>
+}

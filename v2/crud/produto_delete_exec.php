@@ -1,8 +1,6 @@
 <?php
 
-$pageTitle = "";
-
-require_once("common.php");
+require_once("get_dbh.php");
 
 if (isset($_GET['id'])) {
   
@@ -12,16 +10,10 @@ if (isset($_GET['id'])) {
 
   print("Produto excluido.");
 
-  header("Location: produto_list.php");
+  // header("Location: produto_list.php");
 } else {
+  require_once("html_head_navbar.php");
   print("Nenhum id solicitado.");
-}
-
-?>
-
-
-<?php
-
-require_once("footer.php");
+  require_once("footer.php");
   
-?>
+}

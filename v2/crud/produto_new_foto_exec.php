@@ -1,6 +1,6 @@
 <?php
 
-require_once("common.php");
+require_once("get_dbh.php");
 
 $sql = "select id, codigo from v2_produto where id = :id";
 $sth = $dbh->prepare($sql);
@@ -16,7 +16,7 @@ if ($check !== false) {
   smart_resize_image($uploadfile, null, $thumbWidth, $thumbHeight, true, $thumbfile, false, false, 100);
 }
 
-print("Foto atualizada.");
+// print("Foto atualizada.");
 
-// header("Location: produto_list.php");
+header("Location: produto_list.php");
 ?>

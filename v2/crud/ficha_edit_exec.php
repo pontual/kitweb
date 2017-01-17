@@ -1,6 +1,6 @@
 <?php
 
-require_once("common.php");
+require_once("get_dbh.php");
 
 $campoAntigo = $_POST['campoAntigo'];
 $campoNovo = $_POST['campo'];
@@ -17,13 +17,17 @@ if ($campoNovo === $campoAntigo || (int) $result['ct'] === 0) {
                   ":valor" => $_POST['valor'],
                   ":id" => $_POST['id']]);
   
-  print("Novo campo atualizado.");
+  // print("Campo atualizado.");
   
   header("Location: ficha_list.php");
 } else {
+  require_once("html_head_navbar.php");
+  
   print("Alterações não salvas; campo $campoNovo já existe.<br><br>");
   print("Edite o campo existente ou exclua-o primeiro.<br><br>");
   print("<a href='javascript:history.back();'>Voltar</a>");
+
+  require_once("footer.php");
 } 
 
 ?>

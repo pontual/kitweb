@@ -13,10 +13,10 @@ if (isset($_GET['id'])) {
         Produto <?= $result['codigo'] ?>
     </h1>
 
-    <a href="produto_edit_form.php?id=<?= $_GET['id'] ?>">Editar</a> | <a href="produto_delete_form.php?id=<?= $_GET['id'] ?>">Excluir</a>
+    <a href="produto_edit_form.php?id=<?= $_GET['id'] ?>">Editar</a> | <a href="produto_delete_confirm.php?id=<?= $_GET['id'] ?>">Excluir</a>
     <br><br>
 
-    <?= $result['descricao'] ?><br>
+    <?= $result['descricao'] ?><br><br>
     Peso:    <?= $result['peso'] ?><br>
     Medidas: <?= $result['medidas'] ?><br>
     Preço:   <?= $result['preco'] ?><br>

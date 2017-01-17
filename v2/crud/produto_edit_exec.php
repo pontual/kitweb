@@ -1,6 +1,6 @@
 <?php
 
-require_once("common.php");
+require_once("get_dbh.php");
 
 $codigoAntigo = $_POST['codigoAntigo']; 
 $codigoNovo = strtoupper($_POST['codigo']); 
@@ -28,7 +28,7 @@ where id = :id");
                   ":preco" => $_POST['preco'],                
                   ":id" => $_POST['id']]);
 
-  print("Produto atualizado.");
+  // print("Produto atualizado.");
 
   if ($_FILES["arquivo_foto"]['size'] !== 0 && $_FILES["arquivo_foto"]['error'] === UPLOAD_ERR_OK) {
     // update foto
@@ -42,15 +42,17 @@ where id = :id");
       smart_resize_image($uploadfile, null, $thumbWidth, $thumbHeight, true, $thumbfile, false, false, 100);
     }
 
-    print("<br>");
-    print("Foto atualizada.");
+    // print("<br>");
+    // print("Foto atualizada.");
   }
 
   header("Location: produto_view.php?id={$_POST['id']}");
 } else {
+  require_once("html_head_navbar.php");
   print("Alterações não salvas; código $codigoNovo já existe.<br><br>");
   print("Edite o código existente ou exclua-o primeiro.<br><br>");
   print("<a href='javascript:history.back();'>Voltar</a>");
+  require_once("footer.php");
 } 
 
 ?>

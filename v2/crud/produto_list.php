@@ -108,9 +108,20 @@ if ($currentPage < $totalPages) {
             <td><?= $row['medidas'] ?></td>
             <td><?= $row['preco'] ?></td>
             <td>
+                <?php
+                if (file_exists($fotos_folder . $row['codigo'] . ".jpg")) {
+                ?>
+                    
                 <a href="<?= $fotos_folder ?><?= $row['codigo'] ?>.jpg">
-                    <img src="<?= $fotos_folder ?><?= $row['codigo'] ?>_thumb.jpg" alt="<?= $row['codigo'] ?>">
+                    <img src="<?= $fotos_folder ?><?= $row['codigo'] ?>_thumb.jpg" alt="foto <?= $row['codigo'] ?>">
                 </a>
+                
+                <?php
+                } else {
+                  print("sem foto");
+                }
+                ?>
+                
             </td>
             <td><a href="produto_delete_confirm.php?id=<?= $row['id'] ?>">Excluir</a></td>
         </tr>

@@ -1,6 +1,6 @@
 <?php
 
-require_once("common.php");
+require_once("get_dbh.php");
 
 // check if codigo already exists
 
@@ -19,24 +19,30 @@ if ((int) $result['ct'] === 0) {
                   ":medidas" => $_POST['medidas'],
                   ":preco" => $_POST['preco'] ]);
 
-  print("Novo produto inserido.");
-
   // upload foto and create thumbnail
 
   $uploadfile = $fotos_folder . $_POST['codigo'] . ".jpg";
   $thumbfile = $fotos_folder . $_POST['codigo'] . "_thumb.jpg";
 
-  $check = getimagesize($_FILES["arquivo_foto"]["tmp_name"]);
-  if ($check !== false) {
-    move_uploaded_file($_FILES["arquivo_foto"]["tmp_name"], $uploadfile);
+  if ($_FILES["arquivo_foto"]["error"] === 0) {
+    $check = getimagesize($_FILES["arquivo_foto"]["tmp_name"]);
+    if ($check !== false) {
+      move_uploaded_file($_FILES["arquivo_foto"]["tmp_name"], $uploadfile);
 
-    // create thumbnail
-    smart_resize_image($uploadfile, null, $thumbWidth, $thumbHeight, true, $thumbfile, false, false, 100);
+      // create thumbnail
+      smart_resize_image($uploadfile, null, $thumbWidth, $thumbHeight, true, $thumbfile, false, false, 100);
+    }
   }
 
+  // print("Novo produto inserido.");
+  
   header("Location: produto_list.php");
 } else {
+  require_once("html_head_navbar.php");
+  
   print("Código já existe. <a href='javascript:history.back();'>Voltar</a>");
+
+  require_once("footer.php");
 }
 
 ?>
