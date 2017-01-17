@@ -14,6 +14,8 @@
 [OK] Busca - normalize text
      (keep as separate column, all lowercase a-z in db)
 
+[  ] Normalize search query
+
 [  ] Admin for Menu: top level categories (may be a link or folder),
      add subitems with jQuery UI draggable
 
@@ -29,4 +31,5 @@
 
 [OK] Produto edit: check if codigo was rewritten and overwrites another
 
-[  ] Delete images on deleting product?
+[NO] Delete images on deleting product?
+
