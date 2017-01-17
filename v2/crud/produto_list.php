@@ -97,13 +97,14 @@ if ($currentPage < $totalPages) {
         <td>Medidas</td>
         <td>Cód. preço</td>
         <td>Foto</td>
-        <td>Atualizado</td> 
+        <td>Foto atualizada em</td>
+        <!-- <td>Normalizado</td> -->
         <td>&nbsp;</td>
     </tr>
 
     <?php
     
-    $sql = "select id, codigo, descricao, peso, medidas, preco, atualizado from v2_produto order by codigo limit $offset, $rowsPerPage";
+    $sql = "select id, codigo, descricao, peso, medidas, preco, atualizado, normalizado from v2_produto order by codigo limit $offset, $rowsPerPage";
     foreach ($dbh->query($sql) as $row) {
     ?>
 
@@ -131,6 +132,7 @@ if ($currentPage < $totalPages) {
                 
             </td>
             <td><?= $row['atualizado'] ?></td>
+            <!-- <td><?= $row['normalizado'] ?></td> -->
             <td><a href="produto_delete_confirm.php?id=<?= $row['id'] ?>">Excluir</a></td>
         </tr>
     <?php

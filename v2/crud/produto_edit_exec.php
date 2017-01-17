@@ -9,17 +9,14 @@ $sth = $dbh->prepare("select count(*) as ct from v2_produto where codigo = :codi
 $sth->execute([":codigo" => $codigoNovo]);
 $result = $sth->fetch(); 
 
-if ($codigoNovo === $codigoAntigo || (int) $result['ct'] === 0) {
-
-  $atualizado = gmdate("YmdHis", time());
-  
+if ($codigoNovo === $codigoAntigo || (int) $result['ct'] === 0) {  
   $sth = $dbh->prepare("update v2_produto set
 codigo = :codigo,
 descricao = :descricao,
 peso = :peso,
 medidas = :medidas,
 preco = :preco,
-atualizado = :atualizado
+normalizado = :normalizado
 where id = :id");
 
 
@@ -29,13 +26,18 @@ where id = :id");
                   ":peso" => $_POST['peso'],
                   ":medidas" => $_POST['medidas'],
                   ":preco" => $_POST['preco'],
-                  ":atualizado" => $atualizado,
+                  ":normalizado" => normalizeChars($codigoNovo . " " . $_POST['descricao']),
                   ":id" => $_POST['id']]);
 
   // print("Produto atualizado.");
 
   if ($_FILES["arquivo_foto"]['size'] !== 0 && $_FILES["arquivo_foto"]['error'] === UPLOAD_ERR_OK) {
     // update foto
+    $atualizado = gmdate("YmdHis", time());
+
+    $sth = $dbh->prepare("update v2_produto set atualizado = :atualizado where id = :id");
+    $sth->execute([ ":atualizado" => $atualizado,
+                    ":id" => $_POST['id'] ]);
 
     $uploadfile = $fotos_folder . $codigoNovo . "_$atualizado" . ".jpg";
     $thumbfile = $fotos_folder . $codigoNovo . "_$atualizado" . "_thumb.jpg";

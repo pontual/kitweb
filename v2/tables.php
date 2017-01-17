@@ -37,11 +37,12 @@ constraint pk_v2_ficha primary key (id)
 
 id int not null auto_increment,
 codigo varchar(16) not null,
-descricao varchar(200) not null,
+descricao varchar(200),
 peso varchar(32),
 medidas varchar(50),
 preco varchar(16),
 atualizado varchar(16),
+normalizado varchar(255),
 constraint pk_v2_produto primary key (id)
 ",
 

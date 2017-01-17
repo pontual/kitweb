@@ -13,15 +13,16 @@ if ((int) $result['ct'] === 0) {
   // timestamp
   $atualizado = gmdate("YmdHis", time());
   
-  $sth = $dbh->prepare("insert into v2_produto (codigo, descricao, peso, medidas, preco, atualizado)
-  values (:codigo, :descricao, :peso, :medidas, :preco, :atualizado)");
+  $sth = $dbh->prepare("insert into v2_produto (codigo, descricao, peso, medidas, preco, atualizado, normalizado)
+  values (:codigo, :descricao, :peso, :medidas, :preco, :atualizado, :normalizado)");
 
   $sth->execute([ ":codigo" => strtoupper($_POST['codigo']),
                   ":descricao" => $_POST['descricao'],
                   ":peso" => $_POST['peso'],
                   ":medidas" => $_POST['medidas'],
                   ":preco" => $_POST['preco'],
-                  ":atualizado" => $atualizado ]);
+                  ":atualizado" => $atualizado,
+                  ":normalizado" => normalizeChars($_POST['codigo'] . " " . $_POST['descricao']) ]);
 
   // upload foto and create thumbnail
 

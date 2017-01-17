@@ -1,18 +1,18 @@
 [  ] copiar html de "ptl2016"
 
+[  ] Button to perform search
+
 [NO] reset password by sending email
 
 [OK] Generate ("install") tables if they do not exist
 
-[  ] Upload photos through PHP -- edit PHP settings?
+[OK] Upload photos through PHP -- edit PHP settings?
      As a fallback, provide instructions for uploading through WinSCP
 
-[  ] Escape HTML in public facing pages (htmlspecialchars)
+[NO] Escape HTML in public facing pages (htmlspecialchars)
 
-[  ] Busca - normalize text
+[OK] Busca - normalize text
      (keep as separate column, all lowercase a-z in db)
-
-[  ] Button to perform search
 
 [  ] Admin for Menu: top level categories (may be a link or folder),
      add subitems with jQuery UI draggable
@@ -29,4 +29,4 @@
 
 [OK] Produto edit: check if codigo was rewritten and overwrites another
 
-[  ] Fix header calls to appear before content (before common)
+[  ] Delete images on deleting product?
