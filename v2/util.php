@@ -75,7 +75,7 @@ function printListRow($tableName, $id, $valuesArray) {
   foreach ($valuesArray as $value) {
     $out .= "<td>$value</td>";
   }
-  $out .= "";
+  $out .= "<td><a href='{$tableName}_delete_confirm.php?id=$id'>Excluir</a></td>";
   $out .= "</tr>";
   print($out);
 }

@@ -6,18 +6,18 @@ require_once("get_dbh.php");
 
 $nome = trim($_POST['nome']);
 
-$sth = $dbh->prepare("select count(*) as ct from v2_categoria where nome = :nome");
+$sth = $dbh->prepare("select count(*) as ct from v2_pasta where nome = :nome");
 $sth->execute([":nome" => $nome]);
 $result = $sth->fetch();
 
 if ((int) $result['ct'] === 0) {
 
-  $sth = $dbh->prepare("insert into v2_categoria (nome)
+  $sth = $dbh->prepare("insert into v2_pasta (nome)
   values (:nome)");
 
   $sth->execute([ ":nome" => $nome, ]);
 
-  header("Location: categoria_list.php");
+  header("Location: pasta_list.php");
 } else {
 
   require_once("html_head_navbar.php");

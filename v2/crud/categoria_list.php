@@ -22,7 +22,9 @@ require_once("common.php");
     
     $sql = 'select id, nome from v2_categoria order by nome';
     foreach ($dbh->query($sql) as $row) {
-      printListRow("categoria", $row['id'], [ $row['nome'] ]);
+      printListRow("categoria", $row['id'], [
+        $row['nome'],
+        "<a href='categoria_definir_produtos.php?id={$row['id']}'>Definir lista de produtos</a>" ]);
     }
     
     ?>
