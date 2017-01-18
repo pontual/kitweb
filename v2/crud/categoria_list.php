@@ -4,25 +4,25 @@ require_once("common.php");
 
 ?>
 <h1>
-    Ficha
+    Categorias
 </h1>
 
 <p>
-    + <a href="ficha_add_form.php">Adicionar campo</a>
+    + <a href="categoria_add_form.php">Adicionar categoria</a>
 </p>
 
 <table>
     <tr>
         <td>&nbsp;</td>
-        <td>Campo</td>
-        <td>Valor</td>
+        <td>Nome</td>
+        <td>&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <?php
     
-    $sql = 'select id, campo, valor from v2_ficha order by campo';
+    $sql = 'select id, nome from v2_categoria order by nome';
     foreach ($dbh->query($sql) as $row) {
-      printFichaListItem("ficha", $row['id'], $row['campo'], $row['valor']);
+      printListRow("categoria", $row['id'], [ $row['nome'] ]);
     }
     
     ?>

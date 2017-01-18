@@ -10,7 +10,7 @@ require_once("common.php");
     <table>
         <?php
         
-        print(generateRows("produto_add_exec.php", [
+        print(generateRows([
           "Código" => "codigo",
           "Descrição" => "descricao",
           "Peso (gramas)" => "peso",
