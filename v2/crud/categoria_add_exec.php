@@ -12,10 +12,10 @@ $result = $sth->fetch();
 
 if ((int) $result['ct'] === 0) {
 
-  $sth = $dbh->prepare("insert into v2_categoria (nome)
-  values (:nome)");
+  $sth = $dbh->prepare("insert into v2_categoria (nome, lista)
+  values (:nome, :lista)");
 
-  $sth->execute([ ":nome" => $nome, ]);
+  $sth->execute([ ":nome" => $nome, ":lista" => strtoupper(trim($_POST['lista'])) ]);
 
   header("Location: categoria_list.php");
 } else {

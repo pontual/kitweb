@@ -50,15 +50,8 @@ constraint pk_v2_produto primary key (id)
 
 id int not null auto_increment,
 nome varchar(80) not null,
+lista text,
 constraint pk_v2_categoria primary key (id)
-",
-
-  "v2_produtos_de_categoria" => "
-
-id int not null auto_increment,
-id_categoria int not null,
-id_produto int not null,
-constraint pk_v2_produtos_de_categoria primary key (id)
 ",
 
   "v2_pasta" => "

@@ -5,15 +5,18 @@ require_once("get_dbh.php");
 $nomeAntigo = trim($_POST['nomeAntigo']);
 $nomeNovo = trim($_POST['nome']);
 
+$lista = strtoupper(trim($_POST['lista']));
+
 $sth = $dbh->prepare("select count(*) as ct from v2_categoria where nome = :nome");
 $sth->execute([":nome" => $nomeNovo]);
 $result = $sth->fetch();
 
 if ($nomeNovo === $nomeAntigo || (int) $result['ct'] === 0) {
   
-  $sth = $dbh->prepare("update v2_categoria set nome = :nome where id = :id");
+  $sth = $dbh->prepare("update v2_categoria set nome = :nome, lista = :lista where id = :id");
   
   $sth->execute([ ":nome" => $nomeNovo,
+                  ":lista" => $lista,
                   ":id" => $_POST['id']]);
   
   header("Location: categoria_list.php");

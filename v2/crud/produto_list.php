@@ -8,14 +8,14 @@ require_once("common.php");
 </h1>
 
 <h3>
-    + <a href="produto_add_form.php">Adicionar produto</a>
+    <form action="produto_locate.php" method="POST"> 
+         Buscar código: <input name="codigo">
+        <input type="submit"> 
+    </form>
 </h3>
 
 <h3>
-    <form action="produto_locate.php" method="POST"> 
-        Editar o código: <input name="codigo">
-        <input type="submit"> 
-    </form>
+    + <a href="produto_add_form.php">Adicionar produto</a>
 </h3>
 
 <?php
