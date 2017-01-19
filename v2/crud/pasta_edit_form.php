@@ -1,6 +1,7 @@
 <?php
 
 require_once("common.php");
+require_once("link_dropdown.php");
 
 if (isset($_GET['id'])) {
   
@@ -76,17 +77,8 @@ if (isset($_GET['id'])) {
                 <td>
                     <select name="id_categoria">
                         <?php
-                        
-                        // Retrieve all categorias
-                        
-                        $sql = "select id, nome from v2_categoria order by nome";
-                        $sth = $dbh->prepare($sql);
-                        $sth->execute();
-                        $categorias = $sth->fetchAll();
 
-                        foreach ($categorias as $categoria) {
-                          print("<option value='{$categoria['id']}'>{$categoria['nome']}</option>");
-                        }
+                        printCategoriaOptions($dbh);
                         
                         ?>
                         
