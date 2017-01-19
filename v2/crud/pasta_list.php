@@ -4,12 +4,12 @@ require_once("common.php");
 
 ?>
 <h1>
-    Menu (Pastas)
+    Menu
 </h1>
 
-<p>
+<h3>
     + <a href="pasta_add_form.php">Adicionar pasta</a>
-</p>
+</h3>
 
 <table>
     <tr>

@@ -7,9 +7,9 @@ require_once("common.php");
     Categorias
 </h1>
 
-<p>
+<h3>
     + <a href="categoria_add_form.php">Adicionar categoria</a>
-</p>
+</h3>
 
 <table>
     <tr>

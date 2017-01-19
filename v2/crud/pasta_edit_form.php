@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
     ?>
     
     <h3>
-        Links <?= $result[0]['pasta_nome'] ?> existentes:
+        Links existentes:
     </h3>
 
     <table>

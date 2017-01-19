@@ -7,9 +7,9 @@ require_once("common.php");
     Ficha
 </h1>
 
-<p>
+<h3>
     + <a href="ficha_add_form.php">Adicionar campo</a>
-</p>
+</h3>
 
 <table>
     <tr>

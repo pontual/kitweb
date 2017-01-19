@@ -9,7 +9,7 @@ require_once("common.php");
 
 <h3>
     <form action="produto_locate.php" method="POST"> 
-         Buscar código: <input name="codigo">
+         Buscar por código: <input name="codigo">
         <input type="submit"> 
     </form>
 </h3>
