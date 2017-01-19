@@ -20,11 +20,11 @@ require_once("common.php");
     </tr>
     <?php
     
-    $sql = 'select id, nome, lista from v2_categoria order by nome';
+    $sql = 'select id, nome from v2_categoria order by nome';
     foreach ($dbh->query($sql) as $row) {
       printListRow("categoria", $row['id'], [
         $row['nome'],
-        substr($row['lista'], 0, 50) . "..."  ]);
+        "<a href='categoria_definir_produtos_form.php?id={$row["id"]}'>Definir lista de produtos</a>" ]);
     }
     
     ?>
