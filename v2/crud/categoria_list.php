@@ -14,7 +14,7 @@ require_once("common.php");
 <table>
     <tr>
         <td>&nbsp;</td>
-        <td>Nome</td>
+        <td>Identificação</td>
         <td>&nbsp;</td>
     </tr>
     <?php

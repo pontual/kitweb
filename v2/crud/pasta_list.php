@@ -4,7 +4,7 @@ require_once("common.php");
 
 ?>
 <h1>
-    Pastas (do Menu)
+    Menu (Pastas)
 </h1>
 
 <p>

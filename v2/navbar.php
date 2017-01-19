@@ -7,5 +7,5 @@
 
     <a href="categoria_list.php">Categorias</a>
 
-    <a href="pasta_list.php">Pastas</a>
+    <a href="pasta_list.php">Menu</a>
 </p>
