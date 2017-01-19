@@ -10,17 +10,21 @@ if (isset($_GET['id'])) {
   $result = $sth->fetch();
 
   $nome = trim($result['nome']);
-  
-  print(generateEditForm("pasta_edit_exec.php", false, [
-    "Nome" => [ "name" => "nome", "value" => $nome ] ],
-                         [ "id" => $result['id'],
-                           "nomeAntigo" => $nome ]));
-
-
-} else {
-  print("Nenhum id solicitado.");
-}
-
-  require_once("footer.php");
-  
 ?>
+    <h3>Alterar nome:</h3>
+    
+    <?php
+    
+    print(generateEditForm("pasta_edit_exec.php", false, [
+    "Nome" => [ "name" => "nome", "value" => $nome ] ],
+    [ "id" => $result['id'],
+    "nomeAntigo" => $nome ]));
+
+
+    } else {
+    print("Nenhum id solicitado.");
+    }
+
+    require_once("footer.php");
+    
+    ?>

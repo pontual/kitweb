@@ -5,17 +5,21 @@ require_once("normalize_chars.php");
 
 function generateRows($labelNamesArray) {
   $out = "";
+  $autofocus = " autofocus";
   foreach ($labelNamesArray as $label => $name) {
-    $out .= "<tr><td>$label</td><td><input name='$name' size='60'></td></tr>\n";
+    $out .= "<tr><td>$label</td><td><input name='$name' size='60'{$autofocus}></td></tr>\n";
+    $autofocus = "";
   }
   return $out;  
 }
 
 function generateForm($target, $labelNamesArray) {
+  $autofocus = " autofocus";
   $out = "<form action='$target' method='POST'>";
   $out .= "<table>\n";
   foreach ($labelNamesArray as $label => $name) {
-    $out .= "<tr><td>$label</td><td><input name='$name' size='60'></td></tr>\n";
+    $out .= "<tr><td>$label</td><td><input name='$name' size='60'{$autofocus}></td></tr>\n";
+    $autofocus = "";
   }
 
   $out .= "<tr><td>&nbsp;</td><td><input type='submit'></td></tr>\n";
@@ -37,11 +41,13 @@ function generateEditForm($target, $multipart, $labelValuesArray, $hiddenValues)
   }
   
   $out .= "<table>\n";
+  $autofocus = " autofocus";
   foreach ($labelValuesArray as $label => $values) {
     if ($label === "fileLink") {
       $out .= "<tr><td>{$values['name']}</td><td><input type='file' name='{$values['value']}'></td></tr>";
     } else {
-      $out .= "<tr><td>$label</td><td><input name='{$values['name']}' value='{$values['value']}' size='60'></td></tr>\n";
+      $out .= "<tr><td>$label</td><td><input name='{$values['name']}' value='{$values['value']}' size='60'{$autofocus}></td></tr>\n";
+      $autofocus = "";
     }
   }
 
@@ -72,6 +78,17 @@ function printFichaListItem($tableName, $id, $label, $value) {
 function printListRow($tableName, $id, $valuesArray) {
   $out = "<tr>";
   $out .= "<td><a href='{$tableName}_edit_form.php?id=$id'>Editar</a></td>";
+  foreach ($valuesArray as $value) {
+    $out .= "<td>$value</td>";
+  }
+  $out .= "<td><a href='{$tableName}_delete_confirm.php?id=$id'>Excluir</a></td>";
+  $out .= "</tr>";
+  print($out);
+}
+
+function printListRowCategoria($tableName, $customLeft, $id, $valuesArray) {
+  $out = "<tr>";
+  $out .= "<td><a href='{$tableName}_edit_form.php?id=$id'>$customLeft</a></td>";
   foreach ($valuesArray as $value) {
     $out .= "<td>$value</td>";
   }

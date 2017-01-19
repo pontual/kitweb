@@ -39,7 +39,7 @@ select
   } else {
     require_once("html_head_navbar.php");
 
-    print("Código $codigo não cadastrado, e não foi incluido. <a href='produto_add_form.php'>Inserir produto</a><br><br>");
+    print("Código $codigo não está cadastrado, e não foi incluido. <a href='produto_add_form.php'>Adicionar produto</a><br><br>");
 
     return false;
   }  

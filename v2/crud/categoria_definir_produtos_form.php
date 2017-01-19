@@ -1,5 +1,7 @@
 <?php
 
+// DO NOT USE, LATEST CHANGES ARE IN categoria_edit_form.php
+
 require_once("common.php");
 
 // add / edit as textareas
@@ -23,7 +25,6 @@ if (isset($_GET['id'])) {
     $listaString .= $listaItem['codigo'] . "\n";
   }
 
-  print_r($listaResult);
 ?>
     <form action="categoria_definir_produtos_exec.php" method="POST">
         <input type="hidden" name="id" value="<?= $_GET['id'] ?>">

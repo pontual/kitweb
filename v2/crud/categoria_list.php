@@ -15,16 +15,14 @@ require_once("common.php");
     <tr>
         <td>&nbsp;</td>
         <td>Nome</td>
-        <td>Produtos</td>
         <td>&nbsp;</td>
     </tr>
     <?php
     
     $sql = 'select id, nome from v2_categoria order by nome';
     foreach ($dbh->query($sql) as $row) {
-      printListRow("categoria", $row['id'], [
-        $row['nome'],
-        "<a href='categoria_definir_produtos_form.php?id={$row["id"]}'>Definir lista de produtos</a>" ]);
+      printListRowCategoria("categoria", "Editar / adicionar produtos", $row['id'], [
+        $row['nome'] ]);
     }
     
     ?>
