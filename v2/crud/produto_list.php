@@ -8,15 +8,15 @@ require_once("common.php");
 </h1>
 
 <h3>
-    <form action="produto_locate.php" method="POST"> 
-         Buscar por código: <input name="codigo">
-        <input type="submit"> 
-    </form>
+    + <a href="produto_add_form.php">Criar novo produto</a>
 </h3>
 
-<h3>
-    + <a href="produto_add_form.php">Adicionar produto</a>
-</h3>
+<form action="produto_locate.php" method="POST"> 
+    Buscar por código: <input name="codigo">
+    <input type="submit"> 
+</form>
+
+<br>
 
 <?php
 
@@ -120,10 +120,10 @@ if ($currentPage < $totalPages) {
                 if (file_exists($fotos_folder . $row['codigo'] . "_{$row['atualizado']}.jpg")) {
                 ?>
                     
-                <a href="<?= $fotos_folder ?><?= $row['codigo'] ?>_<?= $row['atualizado'] ?>.jpg">
-                    <img src="<?= $fotos_folder ?><?= $row['codigo'] ?>_<?= $row['atualizado'] ?>_thumb.jpg" alt="foto <?= $row['codigo'] ?>">
-                </a>
-                
+                    <a href="<?= $fotos_folder ?><?= $row['codigo'] ?>_<?= $row['atualizado'] ?>.jpg">
+                        <img src="<?= $fotos_folder ?><?= $row['codigo'] ?>_<?= $row['atualizado'] ?>_thumb.jpg" alt="foto <?= $row['codigo'] ?>">
+                    </a>
+                    
                 <?php
                 } else {
                   print("sem foto");

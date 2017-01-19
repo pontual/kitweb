@@ -43,7 +43,7 @@ if (isset($_GET['id'])) {
         <tr>
             <td>&nbsp;</td>
             <td>Nome do link</td>
-            <td>Categoria</td>
+            <td>Lista</td>
             <td>&nbsp;</td>
         </tr>
         
@@ -73,7 +73,7 @@ if (isset($_GET['id'])) {
                 <td><input name="nome" size="60"></td>
             </tr>
             <tr>
-                <td>Categoria</td>
+                <td>Lista</td>
                 <td>
                     <select name="id_categoria">
                         <?php

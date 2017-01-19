@@ -4,11 +4,11 @@ require_once("common.php");
 
 ?>
 <h1>
-    Categorias
+    Listas de produtos
 </h1>
 
 <h3>
-    + <a href="categoria_add_form.php">Adicionar categoria</a>
+    + <a href="categoria_add_form.php">Criar nova lista</a>
 </h3>
 
 <table>

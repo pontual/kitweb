@@ -6,12 +6,6 @@ require_once("common.php");
 
 
 if (isset($_GET['id'])) {
- ?>
-
-    <a href="javascript:history.back()">Voltar</a>
-    <br><br>
-    
-    <?php
   $sql = 'select id, codigo, descricao, peso, medidas, preco from v2_produto where id = :id';
   $sth = $dbh->prepare($sql);
   $sth->execute([ ":id" => $_GET['id']]);
