@@ -3,7 +3,15 @@ kitweb/realdb.php
 fotos/*.jpg
 fotos/*.JPG
 fotos/*.Jpg
+fotos/ptlsite/*.jpg
+fotos/ptlsite/*.JPG
+fotos/ptlsite/*.Jpg
+fotos/v2_1/*.jpg
+fotos/v2_1/thumbs/*.jpg
 kitweb/util/realdb.php
 kitweb/util/ptldb.php
+kitweb/debug/*.php
 v2/db_production.php
 kitweb_v2_db_production.php
+v2/debug/*.php
+debug/*.php
