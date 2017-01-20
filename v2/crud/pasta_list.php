@@ -27,14 +27,29 @@ require_once("common.php");
     <tr>
         <td>&nbsp;</td>
         <td>Nome da pasta</td>
+        <td>Número de links</td>
         <td>&nbsp;</td>
     </tr>
     <?php
+
+    function countLinksInPasta($dbh, $id) {
+      $sql = 'select count(*) as ct from v2_link where id_pasta = :id';
+      $sth = $dbh->prepare($sql);
+      $sth->execute([ ":id" => $id ]);
+      return $sth->fetch()['ct'];
+    }
     
     $sql = 'select id, nome from v2_pasta order by nome';
     foreach ($dbh->query($sql) as $row) {
+      $numLinks = countLinksInPasta($dbh, $row['id']);
+      if ((int) $numLinks === 0) {
+        $linksNotice = " (vazia)";
+      } else {
+        $linksNotice = "";
+      }
+      
       printListRow("pasta", $row['id'], [
-        $row['nome'] ]);        
+        $row['nome'], $numLinks . $linksNotice ]);        
     }
     
     ?>

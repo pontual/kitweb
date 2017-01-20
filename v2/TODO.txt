@@ -1,7 +1,5 @@
 [  ] copiar html de "ptl2016"
 
-[  ] Button to perform search
-
 [NO] reset password by sending email
 
 [OK] Generate ("install") tables if they do not exist
@@ -15,9 +13,6 @@
      (keep as separate column, all lowercase a-z in db)
 
 [  ] Normalize search query
-
-[  ] Admin for Menu: top level categories (may be a link or folder),
-     add subitems with jQuery UI draggable
 
 [  ] Leave a space in the header/banner for announcements and alerts
 
@@ -33,4 +28,7 @@
 
 [NO] Delete images on deleting product?
 
-[  ] Stronger .htaccess user (pontual) and password
+[OK] Stronger .htaccess user (pontual) and password
+
+[  ] Reformat L x W x H dimensions to consistent output, add spaces
+     when LxWxH format is given (explode by 'x')
