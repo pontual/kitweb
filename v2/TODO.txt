@@ -1,24 +1,36 @@
-[  ] copiar html de "ptl2016"
+Public scripts in v2/public/
 
-[NO] reset password by sending email
+[  ] index.php - Overview, get ideas from other sites
+
+[  ] lista.php - Bulk of site, linked to from menu
+
+[  ] busca.php - normalize search query
+
+[  ] mapa.php - embed Google Maps
+
+[  ] produto.php - individual produto data
+
+[  ] inexistente.php - generic error page when bogus ids are given
+
+[  ] header.php
+     Leave a space in the header/banner for announcements and alerts
+
+[  ] footer.php
+
+[  ] Reformat L x W x H dimensions to consistent output, add spaces
+     when LxWxH format is given (explode by 'x')
+
+[no] CSRF token?
+
+[no] reset password by sending email
 
 [OK] Generate ("install") tables if they do not exist
 
 [OK] Upload photos through PHP -- edit PHP settings?
-     As a fallback, provide instructions for uploading through WinSCP
 
-[NO] Escape HTML in public facing pages (htmlspecialchars)
-
-[OK] Busca - normalize text
-     (keep as separate column, all lowercase a-z in db)
-
-[  ] Normalize search query
-
-[  ] Leave a space in the header/banner for announcements and alerts
+[no] Escape HTML in public facing pages (htmlspecialchars)
 
 [OK] Ensure admin pages are using SSL
-
-[NO] CSRF token?
 
 [OK] Paginate produtos
 
@@ -26,9 +38,7 @@
 
 [OK] Produto edit: check if codigo was rewritten and overwrites another
 
-[NO] Delete images on deleting product?
+[no] Delete images on deleting product?
 
 [OK] Stronger .htaccess user (pontual) and password
 
-[  ] Reformat L x W x H dimensions to consistent output, add spaces
-     when LxWxH format is given (explode by 'x')
