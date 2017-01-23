@@ -1,6 +1,6 @@
 Public scripts in v2/public/
 
-[  ] index.php - Overview, get ideas from other sites
+[OK] index.php - Overview, just a splash image
 
 [  ] lista.php - Bulk of site, linked to from menu
 
@@ -22,7 +22,7 @@ Public scripts in v2/public/
 
 [  ] Escape HTML in public facing pages (htmlspecialchars)
 
-[no] CSRF token?
+[no] CSRF token? [ Only for real authentication mechanism ]
 
 [no] reset password by sending email
 
@@ -41,4 +41,3 @@ Public scripts in v2/public/
 [no] Delete images on deleting product?
 
 [OK] Stronger .htaccess user (pontual) and password
-

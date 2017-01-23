@@ -23,6 +23,14 @@ require_once("common.php");
     Clique em "Editar" para adicionar Links.
 </p>
 
+<p>
+    A ordem padrão das pastas é alfabética, porém, é possível usar símbolos especiais no começo do nome para colocar pastas no topo ou no fim da lista.
+</p>
+
+<p>
+    Os símbolos # e $ põem a pasta no topo, e ~ (til) põe a pasta no fim.
+</p>
+
 <table>
     <tr>
         <td>&nbsp;</td>
