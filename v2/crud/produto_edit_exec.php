@@ -52,7 +52,7 @@ where id = :id");
     // print("Foto atualizada.");
   }
 
-  header("Location: produto_view.php?id={$_POST['id']}");
+  header("Location: produto_list.php");
 } else {
   require_once("html_head_navbar.php");
   print("Alterações não salvas; código $codigoNovo já existe.<br><br>");

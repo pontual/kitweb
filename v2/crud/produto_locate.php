@@ -7,4 +7,9 @@ $sth = $dbh->prepare($sql);
 $sth->execute([ ":codigo" => strtoupper($_POST['codigo'])]);
 $result = $sth->fetch();
 
-header("Location: produto_edit_form.php?id={$result['id']}");
+if (isset($result['id'])) {
+  header("Location: produto_edit_form.php?id={$result['id']}");
+} else {
+  header("Location: produto_add_form.php");
+}
+
