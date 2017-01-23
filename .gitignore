@@ -14,4 +14,5 @@ kitweb/debug/*.php
 v2/db_production.php
 kitweb_v2_db_production.php
 v2/debug/*.php
+v2/debug/*.html
 debug/*.php

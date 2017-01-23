@@ -39,7 +39,7 @@ require_once("common.php");
       return $sth->fetch()['ct'];
     }
     
-    $sql = 'select id, nome from v2_pasta order by nome';
+    $sql = 'select id, nome, ascii(nome) as ascii from v2_pasta order by ascii';
     foreach ($dbh->query($sql) as $row) {
       $numLinks = countLinksInPasta($dbh, $row['id']);
       if ((int) $numLinks === 0) {

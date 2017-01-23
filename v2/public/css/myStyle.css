@@ -14,4 +14,18 @@
 .pontual-header {
     font-size: 1.8em;
     line-height: 1.9em;
+    text-align: center;
+}
+
+.info_table {
+    font-size: 1.2em;
+    margin: auto;
+}
+
+.info_table td {
+    text-align: left;
+}
+
+.footer {
+    text-align: center;
 }
