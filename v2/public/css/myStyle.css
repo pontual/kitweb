@@ -1,6 +1,13 @@
+a:link, a:hover, a:visited, a:active {
+    text-decoration: none;
+}
+
+
 .center-div {
-    width: 95%;
+    width: 100%;  /* previously 95% */
+    height: 100vh;
     text-align: center;
+    background-image: url('/fotos/container_ship_lo.jpg');
 }
 
 /* allow header title to expand further
@@ -11,21 +18,42 @@
     margin: 0 10% !important;
 }
 
-.pontual-header {
+.pontual_header {
     font-size: 1.8em;
     line-height: 1.9em;
     text-align: center;
+    background-color: #a90102;
+    color: #fff;
 }
+
+.info_header {
+    font-size: 1.6em;
+    line-height: 1.7em;
+    text-align: center;
+    color: #a90102;
+    border-bottom: 1px solid #a90102;
+}
+
 
 .info_table {
+    padding: 12px;
     font-size: 1.2em;
     margin: auto;
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
-.info_table td {
+.table_left {
     text-align: left;
 }
+
 
 .footer {
     text-align: center;
 }
+
+.panel_container {
+    margin: 0;
+    background-image: url('/fotos/containers.jpg');
+    height: 500px;
+}
+
