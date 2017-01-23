@@ -20,6 +20,8 @@ Public scripts in v2/public/
 [  ] Reformat L x W x H dimensions to consistent output, add spaces
      when LxWxH format is given (explode by 'x')
 
+[  ] Escape HTML in public facing pages (htmlspecialchars)
+
 [no] CSRF token?
 
 [no] reset password by sending email
@@ -27,8 +29,6 @@ Public scripts in v2/public/
 [OK] Generate ("install") tables if they do not exist
 
 [OK] Upload photos through PHP -- edit PHP settings?
-
-[no] Escape HTML in public facing pages (htmlspecialchars)
 
 [OK] Ensure admin pages are using SSL
 

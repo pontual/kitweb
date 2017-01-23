@@ -1,0 +1,17 @@
+.center-div {
+    width: 95%;
+    text-align: center;
+}
+
+/* allow header title to expand further
+   http://stackoverflow.com/questions/14620482/jquery-mobile-header-cut-off
+   */
+
+.ui-title {
+    margin: 0 10% !important;
+}
+
+.pontual-header {
+    font-size: 1.8em;
+    line-height: 1.9em;
+}
