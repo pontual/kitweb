@@ -1,7 +1,5 @@
 Public scripts in v2/public/
 
-[OK] index.php - Overview, just a splash image
-
 [  ] menu.php - generates menu, other pages should require this
 
 [  ] Escape HTML in public facing pages (htmlspecialchars)
@@ -11,19 +9,25 @@ Public scripts in v2/public/
 [  ] Reformat L x W x H dimensions to consistent output, add spaces
      when LxWxH format is given (explode by 'x')
 
+[  ] Add data-ajax="false" to a href links
+
 [  ] busca.php - normalize search query
      use htmlspecialchars(normalizeChars($q))
 
 [  ] mapa.php - embed Google Maps
 
+[  ] contact.php - Currently hardcoded, read from DB v2_ficha
+
+[OK] index.php - Overview, just a splash image
+
 [no] produto.php - individual produto data
 
-[  ] inexistente.php - generic error page when bogus ids are given
+[OK] inexistente.php - generic error page when bogus ids are given
 
-[  ] header.php
+[OK] header.php
      Leave a space in the header/banner for announcements and alerts
 
-[  ] footer.php
+[no] footer.php
 
 [no] CSRF token? [ Only for real authentication mechanism ]
 

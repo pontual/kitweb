@@ -1,5 +1,19 @@
-a:link, a:hover, a:visited, a:active {
+a:link, a:visited, a:active {
+    color: #a90102;
     text-decoration: none;
+}
+
+a:hover {
+    color: #38d;
+}
+
+a.ui-link:link, a.ui-link:visited, a.ui-link:active {
+    color: #a90102;
+    text-decoration: none;
+}
+
+a.ui-link:hover {
+    color: #38d;
 }
 
 
@@ -7,7 +21,7 @@ a:link, a:hover, a:visited, a:active {
     width: 100%;  /* previously 95% */
     height: 100vh;
     text-align: center;
-    background-image: url('/fotos/container_ship_lo.jpg');
+    background-image: url('/fotos/container_ship_light_b.jpg');
 }
 
 /* allow header title to expand further
@@ -57,3 +71,14 @@ a:link, a:hover, a:visited, a:active {
     height: 500px;
 }
 
+.not_found {
+    text-align: center;
+    font-size: 1.6em;
+    margin-top: 40px;
+    color: #a90102;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.index_menu {
+    font-size: 1.6em;
+}

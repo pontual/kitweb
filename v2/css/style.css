@@ -4,10 +4,6 @@
     font-style: normal;
 }
 
-a:link, a:visited, a:hover, a:active {
-    color: #255;
-}
-
 body {
     font-family: 'Droid', monospace;
 }

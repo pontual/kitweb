@@ -97,4 +97,13 @@ function printListRowCategoria($tableName, $customLeft, $id, $valuesArray) {
   print($out);
 }
 
+function removeSymbols($s) {
+  return preg_replace('/[$#~]/u', '', $s);
+}
+
+function sanitizedMenu($s) {
+  return htmlspecialchars(removeSymbols($s));
+}
+
+
 ?>
