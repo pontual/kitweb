@@ -10,13 +10,10 @@
     <body>
         <?php require_once("js_scripts.html"); ?>
 
-
-
         <?php require_once("static_menu.html"); ?>
-
         
         <!-- Dynamic page title in data-title -->
-        <div data-role="page" data-theme="a" data-title="Pontual Import Brindes - Pontual Exportação e Importação Ltda. - <?php echo $page_title ?>" id="produtos-page">
+        <div data-role="page" data-theme="a" data-title="Pontual Import Brindes - Pontual Exportação e Importação Ltda. - <?php echo $page_title ?>" data-ajax="false" id="produtos-page">
 
             <?php require_once("header.php"); ?>
 

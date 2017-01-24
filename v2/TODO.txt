@@ -9,8 +9,6 @@ Public scripts in v2/public/
 [  ] Reformat L x W x H dimensions to consistent output, add spaces
      when LxWxH format is given (explode by 'x')
 
-[  ] Add data-ajax="false" to a href links
-
 [  ] busca.php - normalize search query
      use htmlspecialchars(normalizeChars($q))
 
@@ -28,6 +26,8 @@ Public scripts in v2/public/
      Leave a space in the header/banner for announcements and alerts
 
 [no] footer.php
+
+[OK] Add data-ajax="false" to a href links / mobileinit
 
 [no] CSRF token? [ Only for real authentication mechanism ]
 

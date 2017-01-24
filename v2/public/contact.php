@@ -7,12 +7,12 @@
     </tr>
     <tr>
         <td>
-            <a href="mapa.php" data-ajax="false">
+            <a href="mapa.php">
                 <img src="img/icomoon-location.png" alt="Loc." title="Localização">
             </a>
         </td>
         <td class="table_left">
-            <a href="mapa.php" data-ajax="false">
+            <a href="mapa.php">
                 R. Antônio de Andrade, 109 - Canindé<br>
                 São Paulo, SP - CEP 03034-080
             </a>
@@ -25,9 +25,9 @@
             </a>
         </td>
         <td class="table_left">
-            <a href="tel:01133128845" data-ajax="false">(11) 3312-8845</a>
-            / <a href="tel:01132270761" data-ajax="false">3227-0761</a>
-            / <a href="tel:01127388935" data-ajax="false">2738-8935</a>
+            <a href="tel:01133128845">(11) 3312-8845</a>
+            / <a href="tel:01132270761">3227-0761</a>
+            / <a href="tel:01127388935">2738-8935</a>
         </td>
     </tr>
 </table>
