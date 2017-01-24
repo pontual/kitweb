@@ -2,13 +2,21 @@ Public scripts in v2/public/
 
 [OK] index.php - Overview, just a splash image
 
-[  ] lista.php - Bulk of site, linked to from menu
+[  ] menu.php - generates menu, other pages should require this
+
+[  ] Escape HTML in public facing pages (htmlspecialchars)
+
+[  ] lista.php - Bulk of site, linked to from menu. Uses ID of lista
+
+[  ] Reformat L x W x H dimensions to consistent output, add spaces
+     when LxWxH format is given (explode by 'x')
 
 [  ] busca.php - normalize search query
+     use htmlspecialchars(normalizeChars($q))
 
 [  ] mapa.php - embed Google Maps
 
-[  ] produto.php - individual produto data
+[no] produto.php - individual produto data
 
 [  ] inexistente.php - generic error page when bogus ids are given
 
@@ -16,11 +24,6 @@ Public scripts in v2/public/
      Leave a space in the header/banner for announcements and alerts
 
 [  ] footer.php
-
-[  ] Reformat L x W x H dimensions to consistent output, add spaces
-     when LxWxH format is given (explode by 'x')
-
-[  ] Escape HTML in public facing pages (htmlspecialchars)
 
 [no] CSRF token? [ Only for real authentication mechanism ]
 
