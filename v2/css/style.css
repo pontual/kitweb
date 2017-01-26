@@ -1,11 +1,17 @@
 @font-face {
-    font-family: 'Droid';
-    src: url('droid.ttf') format('truetype');
+    font-family: 'Roboto';
+    src: url('Roboto-Regular.ttf') format('truetype');
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
 body {
-    font-family: 'Droid', monospace;
+    font-family: 'Roboto', monospace;
 }
 
 table {
