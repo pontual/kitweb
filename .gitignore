@@ -1,5 +1,6 @@
 kitweb/realdb.php
 *.jpg
+*.JPG
 fotos/*.jpg
 fotos/*.JPG
 fotos/*.Jpg
@@ -16,3 +17,5 @@ kitweb_v2_db_production.php
 v2/debug/*.php
 v2/debug/*.html
 debug/*.php
+v2/debug/fotos_celia/*.jpg
+v2/debug/fotos_celia/*.JPG
