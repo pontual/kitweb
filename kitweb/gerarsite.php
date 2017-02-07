@@ -51,6 +51,17 @@ function gerar_pagina($prefixo, $name, $conteudo, $categorias, $title) {
 	ob_start();
 	include 'cabecalho.php';
 
+  // inserir aviso para ir ao novo site
+print("
+    <div style="text-align: center; background-color: #ff7; padding: 1em;">
+        A partir de 7 de fevereiro de 2017, não atualizaremos mais esta versão de nossas páginas.
+        <br>
+        <span style="font-size: 2em;">
+            <a href="http://pontualimportbrindes.com.br/">Clique aqui para visitar o Novo Site</a>
+        </span>
+    </div>
+");
+  
 	print '	 <div class="site_body_container">' . "\n";
 	print gerar_barra($prefixo, $categorias);
 	print '<!--' . date('d/m/y H:i:s') . '-->';
